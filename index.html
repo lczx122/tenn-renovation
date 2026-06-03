@@ -12,8 +12,7 @@
 <header class="site-head">
   <div class="wrap bar">
     <a class="brand" href="index.html" aria-label="Tenn Renovation home">
-      <span class="mark">TENN</span>
-      <span class="sub">Renovation</span>
+      <img class="logo-mark" src="media/tenn-logo.svg" alt="Tenn Renovation">
     </a>
     <nav class="nav" aria-label="Primary">
       <a class="link" href="#work">Work</a>
@@ -30,21 +29,78 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" data-screen-label="Hero">
-  <div class="hero-media">
-    <img class="shot" src="media/hero-kitchen.png" alt="Bespoke kitchen with green island, walnut cabinetry and marble worktop at golden hour">
-  </div>
-  <div class="hero-badge">
-    <span class="n">25</span>
-    <span class="t">Years</span>
-  </div>
-  <div class="wrap hero-inner">
-    <span class="eyebrow" style="color:var(--brass)">Melaka · Est. 2001</span>
-    <h1 style="margin-top:22px">Interiors built to last a generation.</h1>
-    <p class="hero-sub">Bespoke cabinetry, smart home systems, fine painting and hand-forged iron grills — designed, made and installed by one trusted team.</p>
-    <div class="hero-actions">
-      <a class="btn btn-brass" href="#work">Browse portfolio <span class="arr">→</span></a>
-      <a class="btn btn-ghost" href="#contact" style="color:#fff;border-color:rgba(255,255,255,.5)">Talk to us</a>
+  <div class="hero-slides" id="heroSlides">
+
+    <!-- Slide 1 — main -->
+    <div class="hero-slide is-active" data-slide="main">
+      <div class="hero-media">
+        <img class="shot" src="media/hero-kitchen.png" alt="Custom kitchen with green island, walnut cabinetry and marble worktop at golden hour">
+      </div>
+      <div class="wrap hero-inner">
+        <img class="hero-logo" src="media/tenn-logo-light.svg" alt="Tenn Renovation">
+        <span class="eyebrow" style="color:var(--brass)">Melaka · Est. 2001</span>
+        <h1 id="heroTitle" style="margin-top:22px">Interiors built to last a generation.</h1>
+        <p class="hero-sub">Customized cabinets, smart home systems, fine painting and hand-forged iron grills — designed, made and installed by one trusted team.</p>
+        <div class="hero-actions">
+          <a class="btn btn-brass" href="#work"><span id="heroCtaLabel">Browse portfolio</span> <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#contact" style="color:#fff;border-color:rgba(255,255,255,.5)">Talk to us</a>
+        </div>
+      </div>
     </div>
+
+    <!-- Slide 2 — coming soon teaser -->
+    <div class="hero-slide hero-teaser" data-slide="teaser">
+      <div class="hero-media teaser-media">
+        <img class="shot teaser-img" src="media/alor-gajah-keris.jpg" alt="">
+      </div>
+      <div class="wrap hero-inner">
+        <span class="eyebrow teaser-eyebrow"><span class="pulse"></span>Coming soon · Alor Gajah</span>
+        <h2 class="teaser-h" style="margin-top:22px">Something big is coming to Alor Gajah.</h2>
+        <p class="hero-sub">A new customized cabinet project is taking shape. A first look is coming soon — be among the first to see it.</p>
+        <div class="hero-actions">
+          <a class="btn btn-brass" href="#contact">Register your interest <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-badge" aria-label="Twenty-five years of craft, established 2001">
+    <svg class="seal" viewBox="0 0 220 220" role="img">
+      <defs>
+        <linearGradient id="gold" x1="0" y1="0" x2="0.25" y2="1">
+          <stop offset="0" stop-color="#f7e3a6"></stop>
+          <stop offset="0.4" stop-color="#d8b463"></stop>
+          <stop offset="0.52" stop-color="#c19a48"></stop>
+          <stop offset="0.74" stop-color="#a87f37"></stop>
+          <stop offset="1" stop-color="#e6c878"></stop>
+        </linearGradient>
+        <linearGradient id="goldSoft" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#eccf86"></stop>
+          <stop offset="1" stop-color="#b08d52"></stop>
+        </linearGradient>
+        <path id="arcTop" d="M 28 110 A 82 82 0 0 1 192 110"></path>
+        <path id="arcBot" d="M 34 110 A 76 76 0 0 0 186 110"></path>
+      </defs>
+      <circle cx="110" cy="110" r="104" fill="rgba(20,15,9,.46)"></circle>
+      <circle cx="110" cy="110" r="104" fill="none" stroke="url(#gold)" stroke-width="2.5"></circle>
+      <circle cx="110" cy="110" r="97" fill="none" stroke="url(#goldSoft)" stroke-width="1"></circle>
+      <text class="seal-arc" fill="url(#gold)">
+        <textPath href="#arcTop" startOffset="50%" text-anchor="middle">TENN&#160;·&#160;RENOVATION</textPath>
+      </text>
+      <text class="seal-arc" fill="url(#gold)">
+        <textPath href="#arcBot" startOffset="50%" text-anchor="middle">EST&#160;·&#160;MELAKA&#160;·&#160;2001</textPath>
+      </text>
+      <rect width="7" height="7" transform="translate(20 110) rotate(45)" fill="url(#gold)"></rect>
+      <rect width="7" height="7" transform="translate(200 110) rotate(45)" fill="url(#gold)"></rect>
+      <text id="badgeYears" class="seal-num" x="110" y="131" text-anchor="middle" fill="url(#gold)">25</text>
+      <text class="seal-years" x="110" y="157" text-anchor="middle" fill="url(#goldSoft)">YEARS</text>
+    </svg>
+  </div>
+
+  <div class="hero-dots" id="heroDots">
+    <button class="dot is-active" data-go="0" aria-label="Show main hero"></button>
+    <button class="dot" data-go="1" aria-label="Show Alor Gajah coming-soon teaser"></button>
   </div>
 </section>
 
@@ -52,10 +108,10 @@
 <section class="trust">
   <div class="wrap">
     <div class="row">
-      <div class="cell"><div class="n">25 yrs</div><div class="t">Of renovation craft in Melaka</div></div>
-      <div class="cell"><div class="n">4</div><div class="t">Trades under one roof</div></div>
-      <div class="cell"><div class="n">600+</div><div class="t">Homes finished &amp; handed over</div></div>
-      <div class="cell"><div class="n">100%</div><div class="t">Made &amp; installed by our own team</div></div>
+      <div class="cell"><div class="n" id="statYears">25 yrs</div><div class="t">Of renovation craft in Melaka</div></div>
+      <div class="cell"><div class="n" id="statHomes">300+</div><div class="t">Homeowners served at Ambience, Pulau Gadong</div></div>
+      <div class="cell"><div class="n">2</div><div class="t">Ambience Residence developments delivered</div></div>
+      <div class="cell"><div class="n">100%</div><div class="t">Designed, made &amp; installed in-house</div></div>
     </div>
   </div>
 </section>
@@ -100,8 +156,8 @@
         <div class="pic"><img class="shot" src="media/cabinetry-walnut.png" alt="Floor-to-ceiling walnut cabinetry with brass handles, lit glass display and marble island"></div>
         <div class="body">
           <span class="tag">Our signature craft</span>
-          <h3>Bespoke Cabinetry</h3>
-          <p>Kitchens, wardrobes, TV consoles and storage built to the millimetre for your space. We design, mill and finish in our own workshop — solid carcasses, soft-close everything, materials that wear beautifully.</p>
+          <h3>Customized Cabinets</h3>
+          <p>Kitchens, wardrobes, TV consoles, storage and integrated mirror &amp; glass work — built to the millimetre for your space. We design, mill and finish in our own workshop: solid carcasses, soft-close everything, materials that wear beautifully.</p>
           <span class="more">Explore cabinetry <span class="arr">→</span></span>
         </div>
       </a>
@@ -139,83 +195,58 @@
   </div>
 </section>
 
-<!-- ============ FEATURE SPLIT ============ -->
-<section class="section feature">
-  <div class="wrap">
-    <div class="split">
-      <div class="pic reveal"><div class="ph" data-label="detail — dovetail joinery + brass hardware close-up"></div></div>
-      <div class="txt reveal">
-        <span class="eyebrow">The cabinetry difference</span>
-        <h2>Measured by hand. Made to fit.</h2>
-        <p>Every kitchen starts with a site visit, not a catalogue. We template your walls, account for every pipe and skirting, and build cabinetry that sits flush — no filler strips, no gaps, no compromises.</p>
-        <ul class="spec">
-          <li><span class="k">Carcass</span><span class="v">Moisture-resistant board, edged on all six faces</span></li>
-          <li><span class="k">Hardware</span><span class="v">Soft-close hinges &amp; runners, 25-year rated</span></li>
-          <li><span class="k">Finishes</span><span class="v">Laminate, veneer, 2-pac spray or solid timber</span></li>
-          <li><span class="k">Lead time</span><span class="v">Typically 4–6 weeks from design sign-off</span></li>
-        </ul>
-        <div style="margin-top:32px"><a class="btn btn-dark" href="services.html#cabinetry">See how we build <span class="arr">→</span></a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ PORTFOLIO ============ -->
 <section class="section folio" id="work" data-screen-label="Portfolio">
   <div class="wrap">
     <div class="sec-head reveal">
       <div>
         <span class="eyebrow">Selected work</span>
-        <h2>Recent projects across Melaka.</h2>
+        <h2>Two recent projects in Melaka.</h2>
       </div>
-      <p class="right lead">A snapshot of homes we've finished. Filter by the craft you're planning.</p>
+      <p class="right lead">A closer look at spaces we've delivered end to end — from the cabinetry to the finishes and everything in between.</p>
     </div>
 
-    <div class="filters reveal" id="filters">
-      <button class="active" data-f="all">All work</button>
-      <button data-f="cabinetry">Cabinetry</button>
-      <button data-f="smart">Smart home</button>
-      <button data-f="painting">Painting</button>
-      <button data-f="grills">Iron grills</button>
-    </div>
+    <div class="projects">
+      <!-- Project 01 -->
+      <article class="project reveal">
+        <div class="project-gallery">
+          <div class="g-main"><img class="shot" src="media/cabinetry-walnut.png" alt="Customized walnut cabinets with brass handles at Ambience Residence, Pulau Gadong"></div>
+          <div class="g-a"><img class="shot" src="media/smart-home.png" alt="Smart lighting control panel installed at Ambience Residence, Pulau Gadong"></div>
+          <div class="g-b"><img class="shot" src="media/hero-kitchen.png" alt="Finished kitchen with island and customized cabinets at Ambience Residence, Pulau Gadong"></div>
+        </div>
+        <div class="project-body">
+          <span class="ix">Project 01</span>
+          <h3>Ambience Residence, Pulau Gadong</h3>
+          <p class="loc">Full-home renovation · Melaka</p>
+          <p>A complete home fit-out where we prepared customized cabinet packages designed around each room type — kitchen, wardrobes and storage built to suit how every space is used. We also carried out all of our other services on site, so the entire home was finished by one team.</p>
+          <div class="tags">
+            <span>Customized cabinets</span>
+            <span>Smart home</span>
+            <span>Painting</span>
+            <span>Iron grills</span>
+          </div>
+        </div>
+      </article>
 
-    <div class="folio-grid" id="folioGrid">
-      <div class="folio-item tall reveal" data-cat="cabinetry">
-        <div class="ph" data-label="kitchen — island + tall pantry run"></div>
-        <div class="cap"><div class="t">Walnut Galley Kitchen</div><div class="s">Cabinetry · Ayer Keroh</div></div>
-      </div>
-      <div class="folio-item reveal" data-cat="smart">
-        <div class="ph" data-label="smart living — lighting scenes"></div>
-        <div class="cap"><div class="t">Connected Living Room</div><div class="s">Smart home · Klebang</div></div>
-      </div>
-      <div class="folio-item reveal" data-cat="painting">
-        <div class="ph" data-label="painting — two-tone stairwell"></div>
-        <div class="cap"><div class="t">Two-Tone Stairwell</div><div class="s">Painting · Bukit Beruang</div></div>
-      </div>
-      <div class="folio-item reveal" data-cat="grills">
-        <div class="ph" data-label="iron — modern slat gate"></div>
-        <div class="cap"><div class="t">Slatted Entry Gate</div><div class="s">Iron grills · Bachang</div></div>
-      </div>
-      <div class="folio-item tall reveal" data-cat="cabinetry">
-        <div class="ph" data-label="wardrobe — full-height fitted robe"></div>
-        <div class="cap"><div class="t">Fitted Master Wardrobe</div><div class="s">Cabinetry · Melaka Raya</div></div>
-      </div>
-      <div class="folio-item reveal" data-cat="cabinetry">
-        <div class="ph" data-label="tv console — floating media wall"></div>
-        <div class="cap"><div class="t">Floating Media Wall</div><div class="s">Cabinetry · Cheng</div></div>
-      </div>
-      <div class="folio-item reveal" data-cat="painting">
-        <div class="ph" data-label="exterior — repaint terrace facade"></div>
-        <div class="cap"><div class="t">Terrace Facade Repaint</div><div class="s">Painting · Ujong Pasir</div></div>
-      </div>
-      <div class="folio-item reveal" data-cat="grills">
-        <div class="ph" data-label="iron — window grill set"></div>
-        <div class="cap"><div class="t">Geometric Window Grills</div><div class="s">Iron grills · Semabok</div></div>
-      </div>
-      <div class="folio-item reveal" data-cat="smart">
-        <div class="ph" data-label="smart — door entry + cctv"></div>
-        <div class="cap"><div class="t">Smart Entry &amp; CCTV</div><div class="s">Smart home · Kota Laksamana</div></div>
-      </div>
+      <!-- Project 02 -->
+      <article class="project reveal">
+        <div class="project-gallery">
+          <div class="g-main"><div class="ph" data-label="showroom — Ambience Residence Klebang, display cabinetry"></div></div>
+          <div class="g-a"><div class="ph" data-label="mirrors & glass — feature panels"></div></div>
+          <div class="g-b"><div class="ph" data-label="painting — showroom walls & ceiling"></div></div>
+        </div>
+        <div class="project-body">
+          <span class="ix">Project 02</span>
+          <h3>Ambience Residence Showroom, Klebang</h3>
+          <p class="loc">Showroom fit-out · Melaka</p>
+          <p>For the Klebang showroom we built all of the cabinetry — every unit except the kitchen cabinets, including the mirror and glass work — alongside the complete painting scope, creating a polished, display-ready space.</p>
+          <div class="tags">
+            <span>Cabinetry</span>
+            <span>Mirrors &amp; glass</span>
+            <span>Painting</span>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -243,7 +274,7 @@
 <section class="section craft" id="craft">
   <div class="wrap">
     <div class="split">
-      <div class="pic reveal"><div class="ph dark" data-label="portrait — Tenn workshop team / founders"></div></div>
+      <div class="pic reveal"><img class="shot" src="media/team-portrait.jpg" alt="The Tenn Renovation workshop team together at the Melaka studio"></div>
       <div class="txt reveal">
         <span class="eyebrow">Our story</span>
         <h2>A Melaka workshop, 25 years in the making.</h2>
@@ -262,6 +293,10 @@
       <div>
         <span class="eyebrow">Kind words</span>
         <h2>Homeowners who'd have us back.</h2>
+      </div>
+      <div class="partner">
+        <span class="partner-lbl">Trusted by</span>
+        <span class="partner-name">Ambience Residence</span>
       </div>
     </div>
     <div class="quotes">
@@ -314,13 +349,13 @@
   <div class="wrap">
     <div class="top">
       <div class="brand">
-        <div><span class="mark" style="font-family:var(--serif);letter-spacing:.16em">TENN</span> <span style="font-size:11px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--brass)">Renovation</span></div>
-        <p class="bl">Bespoke cabinetry, smart home, painting and iron grills — crafted and installed by one trusted Melaka team since 2001.</p>
+        <img class="logo-mark" src="media/tenn-logo-light.svg" alt="Tenn Renovation">
+        <p class="bl">Customized cabinets, smart home, painting and iron grills — crafted and installed by one trusted Melaka team since 2001.</p>
       </div>
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="services.html#cabinetry">Bespoke cabinetry</a></li>
+          <li><a href="services.html#cabinetry">Customized cabinets</a></li>
           <li><a href="services.html#smart-home">Smart home systems</a></li>
           <li><a href="services.html#painting">Painting work</a></li>
           <li><a href="services.html#iron-grills">Iron grills &amp; gates</a></li>
@@ -353,20 +388,44 @@
 </footer>
 
 <script>
-  // portfolio filter
+  // hero carousel — gentle crossfade, auto-advance, pause on hover
+  (function(){
+    const wrap = document.getElementById('heroSlides');
+    if(!wrap) return;
+    const slides = [...wrap.querySelectorAll('.hero-slide')];
+    const dots = [...document.querySelectorAll('#heroDots .dot')];
+    if(slides.length < 2) return;
+    let i = 0, timer = null;
+    const show = (n) => {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s,k) => s.classList.toggle('is-active', k === i));
+      dots.forEach((d,k) => d.classList.toggle('is-active', k === i));
+    };
+    const start = () => { stop(); timer = setInterval(() => show(i + 1), 6500); };
+    const stop = () => { if(timer){ clearInterval(timer); timer = null; } };
+    dots.forEach(d => d.addEventListener('click', () => { show(+d.dataset.go); start(); }));
+    const hero = document.querySelector('.hero');
+    hero.addEventListener('mouseenter', stop);
+    hero.addEventListener('mouseleave', start);
+    start();
+  })();
+
+  // portfolio filter (only present when the filter bar exists)
   const filterBar = document.getElementById('filters');
-  const items = [...document.querySelectorAll('.folio-item')];
-  filterBar.addEventListener('click', e => {
-    const btn = e.target.closest('button');
-    if(!btn) return;
-    filterBar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.f;
-    items.forEach(it => {
-      const show = f === 'all' || it.dataset.cat === f;
-      it.classList.toggle('hide', !show);
+  if(filterBar){
+    const items = [...document.querySelectorAll('.folio-item')];
+    filterBar.addEventListener('click', e => {
+      const btn = e.target.closest('button');
+      if(!btn) return;
+      filterBar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.f;
+      items.forEach(it => {
+        const show = f === 'all' || it.dataset.cat === f;
+        it.classList.toggle('hide', !show);
+      });
     });
-  });
+  }
 
   // showcase video: load via blob (serve endpoint lacks range support), tap to unmute
   const reel = document.getElementById('reel');
@@ -399,5 +458,13 @@
     io.observe(el);
   });
 </script>
+
+<!-- ============ TWEAKS PANEL ============ -->
+<div id="tweaks-root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="tweaks-app.jsx"></script>
 </body>
 </html>
