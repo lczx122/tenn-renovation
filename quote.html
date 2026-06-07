@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Quote — Tenn Renovation</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Tenn Renovation home">
+      <img class="logo-mark" src="media/tenn-logo.svg" alt="Tenn Renovation">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="link" href="index.html#work">Work</a>
+      <a class="link" href="services.html">Services</a>
+      <a class="link" href="index.html#process">Process</a>
+      <a class="link" href="index.html#craft">About</a>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="index.html#work">Browse portfolio</a>
+        <a class="btn btn-wa" href="#quote-form">Request a quote</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero" data-screen-label="Quote hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; Request a quote</div>
+    <span class="eyebrow" style="color:var(--brass)">Free, no obligation</span>
+    <h1 style="margin-top:20px">Tell us what you're planning.</h1>
+    <p>Answer a few quick questions and we'll prepare a WhatsApp message to send straight to our team. We'll arrange a visit, measure up, and come back with a clear, honest quote.</p>
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="section quote-wrap" id="quote-form" data-screen-label="Quote form">
+  <div class="wrap">
+    <div class="quote-layout">
+
+      <!-- LEFT — what happens next -->
+      <aside class="quote-aside reveal">
+        <span class="eyebrow">How it works</span>
+        <h2>From message to measured quote.</h2>
+        <p class="lead">No forms lost in an inbox. Your answers open a ready-to-send WhatsApp chat with our team — usually a reply the same day.</p>
+        <ol class="q-steps">
+          <li>
+            <span class="qn"></span>
+            <span class="qt"><b>Send your details</b><span>Fill this in and tap send — it opens WhatsApp with everything filled in.</span></span>
+          </li>
+          <li>
+            <span class="qn"></span>
+            <span class="qt"><b>We arrange a visit</b><span>We agree a time, come to site and template the space precisely.</span></span>
+          </li>
+          <li>
+            <span class="qn"></span>
+            <span class="qt"><b>You get a clear quote</b><span>An itemised, fixed quote — refined with you until it's right.</span></span>
+          </li>
+        </ol>
+        <div class="quote-reassure"><span class="dot-ok"></span> Mon–Sat · 9am–6pm · Serving Melaka &amp; surrounds</div>
+      </aside>
+
+      <!-- RIGHT — the form -->
+      <div class="q-card reveal">
+        <div class="q-card-head">
+          <div class="lbl">Request a quote</div>
+          <h3>A few quick questions</h3>
+          <p>Only your name and contact are required — the rest just helps us prepare a more useful quote.</p>
+        </div>
+
+        <form class="q-form" id="quoteForm" novalidate>
+
+          <div class="q-grid-2">
+            <div class="q-field" data-required>
+              <label for="qName">Your name <span class="q-req">*</span></label>
+              <input class="q-input" type="text" id="qName" name="name" placeholder="e.g. Mei Ling" autocomplete="name">
+            </div>
+            <div class="q-field" data-required>
+              <label for="qPhone">Phone / WhatsApp <span class="q-req">*</span></label>
+              <input class="q-input" type="tel" id="qPhone" name="phone" placeholder="e.g. 012-345 6789" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="q-field">
+            <label for="qArea">Where's the property? <span class="opt">Optional</span></label>
+            <input class="q-input" type="text" id="qArea" name="area" placeholder="e.g. Ayer Keroh, Bukit Beruang, Klebang…">
+          </div>
+
+          <div class="q-field">
+            <span class="q-legend">What do you need? <span class="opt">Pick any</span></span>
+            <div class="q-chips" id="qServices">
+              <label class="q-chip"><input type="checkbox" name="service" value="Customized cabinets"><span>Customized cabinets</span></label>
+              <label class="q-chip"><input type="checkbox" name="service" value="Smart home systems"><span>Smart home</span></label>
+              <label class="q-chip"><input type="checkbox" name="service" value="Painting work"><span>Painting</span></label>
+              <label class="q-chip"><input type="checkbox" name="service" value="Iron grills &amp; gates"><span>Iron grills &amp; gates</span></label>
+              <label class="q-chip"><input type="checkbox" name="service" value="Not sure / whole home"><span>Not sure / whole home</span></label>
+            </div>
+          </div>
+
+          <div class="q-field">
+            <span class="q-legend">Project type <span class="opt">Optional</span></span>
+            <div class="q-chips" id="qType">
+              <label class="q-chip"><input type="radio" name="ptype" value="New home"><span>New home</span></label>
+              <label class="q-chip"><input type="radio" name="ptype" value="Renovation"><span>Renovation</span></label>
+              <label class="q-chip"><input type="radio" name="ptype" value="Single room"><span>Single room</span></label>
+              <label class="q-chip"><input type="radio" name="ptype" value="Commercial / office"><span>Commercial</span></label>
+            </div>
+          </div>
+
+          <div class="q-grid-2">
+            <div class="q-field">
+              <label for="qBudget">Rough budget <span class="opt">Optional</span></label>
+              <select class="q-select" id="qBudget" name="budget">
+                <option value="">Not sure yet</option>
+                <option value="Under RM10,000">Under RM10,000</option>
+                <option value="RM10,000 – RM30,000">RM10,000 – RM30,000</option>
+                <option value="RM30,000 – RM60,000">RM30,000 – RM60,000</option>
+                <option value="RM60,000 – RM100,000">RM60,000 – RM100,000</option>
+                <option value="Above RM100,000">Above RM100,000</option>
+              </select>
+            </div>
+            <div class="q-field">
+              <label for="qTimeline">Ideal timeline <span class="opt">Optional</span></label>
+              <select class="q-select" id="qTimeline" name="timeline">
+                <option value="">Just exploring</option>
+                <option value="As soon as possible">As soon as possible</option>
+                <option value="Within 1–3 months">Within 1–3 months</option>
+                <option value="In 3–6 months">In 3–6 months</option>
+                <option value="6+ months away">6+ months away</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="q-field">
+            <label for="qMsg">Tell us more <span class="opt">Optional</span></label>
+            <textarea class="q-textarea" id="qMsg" name="message" placeholder="A few words about your space, style or anything specific you have in mind — measurements, finishes, must-haves…"></textarea>
+          </div>
+
+          <div class="q-field">
+            <span class="q-legend">Send to</span>
+            <div class="q-recip" id="qRecip">
+              <label class="q-chip"><input type="radio" name="recipient" value="60109718663" checked><span>Royce<small>Cabinetry &amp; project lead</small></span></label>
+              <label class="q-chip"><input type="radio" name="recipient" value="60163303178"><span>Lucas<small>Smart home &amp; finishing</small></span></label>
+            </div>
+          </div>
+
+          <p class="q-err" id="qErr">Please add your name and a contact number so we can reach you.</p>
+
+          <div class="q-send">
+            <button class="btn btn-wa" type="submit">
+              <svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.84c2.16 0 4.19.84 5.72 2.37a8.04 8.04 0 0 1 2.37 5.71c0 4.46-3.63 8.08-8.09 8.08a8.1 8.1 0 0 1-4.12-1.13l-.3-.18-3.06.8.82-2.99-.19-.31a8.05 8.05 0 0 1-1.24-4.29c0-4.46 3.63-8.08 8.09-8.08Zm-2.6 3.32c-.18 0-.46.07-.7.34-.24.27-.93.91-.93 2.21 0 1.31.95 2.57 1.08 2.74.13.18 1.86 2.85 4.51 3.99.63.27 1.12.43 1.5.55.63.2 1.21.17 1.66.1.5-.07 1.55-.63 1.77-1.25.22-.61.22-1.14.15-1.25-.06-.11-.24-.18-.5-.31-.27-.13-1.55-.76-1.79-.85-.24-.09-.42-.13-.59.13-.18.27-.68.85-.83 1.03-.15.18-.31.2-.57.07-.27-.13-1.11-.41-2.12-1.31-.78-.7-1.31-1.56-1.46-1.82-.15-.27-.02-.41.11-.54.12-.12.27-.31.4-.46.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.59-1.42-.81-1.94-.21-.51-.43-.44-.59-.45h-.5Z"/></svg>
+              Send on WhatsApp
+            </button>
+            <p class="fine">Opens WhatsApp with your answers ready to send. Nothing is shared until you press send there.</p>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <img class="logo-mark" src="media/tenn-logo-light.svg" alt="Tenn Renovation">
+        <p class="bl">Customized cabinets, smart home, painting and iron grills — crafted and installed by one trusted Melaka team since 2001.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#cabinetry">Customized cabinets</a></li>
+          <li><a href="services.html#smart-home">Smart home systems</a></li>
+          <li><a href="services.html#painting">Painting work</a></li>
+          <li><a href="services.html#iron-grills">Iron grills &amp; gates</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#work">Portfolio</a></li>
+          <li><a href="index.html#process">Our process</a></li>
+          <li><a href="index.html#craft">About us</a></li>
+          <li><a href="quote.html">Request a quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="https://wa.me/60109718663" target="_blank" rel="noopener">WhatsApp · Royce</a></li>
+          <li><a href="https://wa.me/60163303178" target="_blank" rel="noopener">WhatsApp · Lucas</a></li>
+          <li><span style="color:rgba(246,241,232,.72)">Melaka, Malaysia</span></li>
+          <li><span style="color:rgba(246,241,232,.72)">Mon–Sat · 9am–6pm</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bot">
+      <span>© 2026 Tenn Renovation. All rights reserved.</span>
+      <span>Melaka · Malaysia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold:.14, rootMargin:'0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // quote form → compose a tidy WhatsApp message and open the chat
+  (function(){
+    const form = document.getElementById('quoteForm');
+    if(!form) return;
+    const err = document.getElementById('qErr');
+    const decode = (s) => { const t = document.createElement('textarea'); t.innerHTML = s; return t.value; };
+
+    // deep-link prefill: ?service=Painting%20work&type=Renovation
+    const params = new URLSearchParams(location.search);
+    const wanted = (params.get('service') || '').toLowerCase().trim();
+    if(wanted){
+      form.querySelectorAll('input[name="service"]').forEach(cb => {
+        if(decode(cb.value).toLowerCase().includes(wanted)) cb.checked = true;
+      });
+    }
+    const wantType = (params.get('type') || '').toLowerCase().trim();
+    if(wantType){
+      form.querySelectorAll('input[name="ptype"]').forEach(r => {
+        if(r.value.toLowerCase() === wantType) r.checked = true;
+      });
+    }
+
+    const clearInvalid = () => {
+      form.querySelectorAll('.q-field.invalid').forEach(f => f.classList.remove('invalid'));
+      err.classList.remove('show');
+    };
+    form.addEventListener('input', clearInvalid);
+    form.addEventListener('change', clearInvalid);
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = (data.get('name') || '').toString().trim();
+      const phone = (data.get('phone') || '').toString().trim();
+
+      // validate the two required fields
+      let ok = true;
+      const nameField = document.getElementById('qName').closest('.q-field');
+      const phoneField = document.getElementById('qPhone').closest('.q-field');
+      if(!name){ nameField.classList.add('invalid'); ok = false; }
+      if(!phone){ phoneField.classList.add('invalid'); ok = false; }
+      if(!ok){ err.classList.add('show'); (name ? phoneField : nameField).querySelector('input').focus(); return; }
+
+      const services = data.getAll('service').map(s => decode(s.toString()));
+      const ptype = (data.get('ptype') || '').toString();
+      const area = (data.get('area') || '').toString().trim();
+      const budget = (data.get('budget') || '').toString();
+      const timeline = (data.get('timeline') || '').toString();
+      const msg = (data.get('message') || '').toString().trim();
+      const recipient = (data.get('recipient') || '60109718663').toString();
+
+      // build the message
+      const L = [];
+      L.push('Hi Tenn Renovation, I’d like to request a quote.');
+      L.push('');
+      L.push('• Name: ' + name);
+      L.push('• Contact: ' + phone);
+      if(area)            L.push('• Location: ' + area);
+      if(services.length) L.push('• Looking for: ' + services.join(', '));
+      if(ptype)           L.push('• Project type: ' + ptype);
+      if(budget)          L.push('• Budget: ' + budget);
+      if(timeline)        L.push('• Timeline: ' + timeline);
+      if(msg){ L.push(''); L.push('Details: ' + msg); }
+      L.push('');
+      L.push('(Sent from your website)');
+
+      const url = 'https://wa.me/' + recipient + '?text=' + encodeURIComponent(L.join('\n'));
+      window.open(url, '_blank', 'noopener');
+    });
+  })();
+</script>
+
+</body>
+</html>
