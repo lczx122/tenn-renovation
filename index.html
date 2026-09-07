@@ -4,17 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tenn Renovation — Crafted Interiors in Melaka</title>
+<meta name="description" content="Customized cabinets, smart home systems, painting and hand-forged iron grills — designed, made and installed by one trusted Melaka team since 2001.">
+<meta name="theme-color" content="#0d1130">
+<link rel="icon" href="media/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tenn Renovation">
+<meta property="og:title" content="Tenn Renovation — Crafted Interiors in Melaka">
+<meta property="og:description" content="Customized cabinets, smart home systems, painting and hand-forged iron grills — designed, made and installed by one trusted Melaka team since 2001.">
+<meta property="og:locale" content="en_MY">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="preload" as="image" href="media/hero-kitchen.jpg" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <!-- ============ HEADER ============ -->
-<header class="site-head">
+<header class="site-head" id="siteHead">
   <div class="wrap bar">
     <a class="brand" href="index.html" aria-label="Tenn Renovation home">
-      <img class="logo-mark" src="media/tenn-logo.svg" alt="Tenn Renovation">
+      <img class="logo-mark" src="media/tenn-logo.svg" alt="Tenn Renovation" width="640" height="392">
     </a>
-    <nav class="nav" aria-label="Primary">
+    <nav class="nav" id="siteNav" aria-label="Primary">
       <a class="link" href="#work">Work</a>
       <a class="link" href="#services">Services</a>
       <a class="link" href="#process">Process</a>
@@ -24,27 +39,32 @@
         <a class="btn btn-wa" href="quote.html">Request a quote</a>
       </div>
     </nav>
+    <div class="bar-actions">
+      <a class="btn btn-wa btn-sm" href="quote.html">Get a quote</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
+<main id="main">
 
 <!-- ============ HERO ============ -->
-<section class="hero" data-screen-label="Hero">
+<section class="hero">
   <div class="hero-slides" id="heroSlides">
 
     <!-- Slide 1 — main -->
     <div class="hero-slide is-active" data-slide="main">
       <div class="hero-media">
-        <img class="shot" src="media/hero-kitchen.png" alt="Custom kitchen with green island, walnut cabinetry and marble worktop at golden hour">
+        <img class="shot" src="media/hero-kitchen.jpg" alt="Custom kitchen with green island, walnut cabinetry and marble worktop at golden hour" width="1584" height="672" fetchpriority="high" decoding="async">
       </div>
       <div class="wrap hero-inner">
-        <img class="hero-logo" src="media/tenn-logo-light.svg" alt="Tenn Renovation">
+        <img class="hero-logo" src="media/tenn-logo-light.svg" alt="Tenn Renovation" width="640" height="392">
         <span class="eyebrow" style="color:var(--brass)">Melaka · Est. 2001</span>
         <h1 id="heroTitle" style="margin-top:22px">Interiors built to last a generation.</h1>
         <p class="zh-head" lang="zh">打造传承一代人的居家空间。</p>
         <p class="hero-sub">Customized cabinets, smart home systems, fine painting and hand-forged iron grills — designed, made and installed by one trusted team.</p>
         <div class="hero-actions">
           <a class="btn btn-brass" href="#work"><span id="heroCtaLabel">Browse portfolio</span> <span class="arr">→</span></a>
-          <a class="btn btn-ghost" href="quote.html" style="color:#fff;border-color:rgba(255,255,255,.5)">Get a quote</a>
+          <a class="btn btn-ghost inv" href="quote.html">Get a quote</a>
         </div>
       </div>
     </div>
@@ -52,7 +72,7 @@
     <!-- Slide 2 — coming soon teaser -->
     <div class="hero-slide hero-teaser" data-slide="teaser">
       <div class="hero-media teaser-media">
-        <img class="shot teaser-img" src="media/alor-gajah-keris.jpg" alt="">
+        <img class="shot teaser-img" src="media/alor-gajah-keris.jpg" alt="" width="1400" height="933" loading="lazy" decoding="async">
       </div>
       <div class="wrap hero-inner">
         <span class="eyebrow teaser-eyebrow"><span class="pulse"></span>Coming soon · Alor Gajah</span>
@@ -118,11 +138,11 @@
 </section>
 
 <!-- ============ VIDEO SHOWCASE ============ -->
-<section class="section showcase" id="showcase" data-screen-label="Showcase video">
+<section class="section showcase" id="showcase">
   <div class="wrap">
     <div class="split">
       <div class="vframe reveal">
-        <video id="reel" loop muted playsinline preload="auto" poster=""></video>
+        <video id="reel" src="media/showcase.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Tenn Renovation showcase reel"></video>
         <button class="mute" id="reelMute" aria-label="Unmute video" aria-pressed="false">
           <svg id="muteIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
         </button>
@@ -134,7 +154,7 @@
         <p>From the workshop floor to the finished install — a quick look at how we design, make and fit a Tenn renovation. Tap the speaker to hear it.</p>
         <div class="actions">
           <a class="btn btn-brass" href="#work">Browse the portfolio <span class="arr">→</span></a>
-          <a class="btn btn-ghost" href="quote.html" style="color:#fff;border-color:rgba(255,255,255,.4)">Start a project</a>
+          <a class="btn btn-ghost inv" href="quote.html">Start a project</a>
         </div>
       </div>
     </div>
@@ -155,7 +175,7 @@
 
     <div class="svc-grid">
       <a class="svc-card reveal" href="services.html#cabinetry">
-        <div class="pic"><img class="shot" src="media/ambience-pantry.jpg" alt="Walnut floating shelves and storage console built for the Ambience Residence, Pulau Gadong"></div>
+        <div class="pic"><img class="shot" src="media/ambience-pantry.jpg" alt="Walnut floating shelves and storage console built for the Ambience Residence, Pulau Gadong" width="810" height="1080" loading="lazy" decoding="async"></div>
         <div class="body">
           <div class="svc-top"><span class="ix">01</span><span class="svc-sig">Signature craft</span></div>
           <h3>Customized Cabinets</h3>
@@ -165,7 +185,7 @@
       </a>
 
       <a class="svc-card reveal" href="services.html#smart-home">
-        <div class="pic"><img class="shot" src="media/smart-home.png" alt="Person controlling a connected smart home from a tablet, with lighting, security, climate and entertainment icons linked across the living room"></div>
+        <div class="pic"><img class="shot" src="media/smart-home.jpg" alt="Person controlling a connected smart home from a tablet, with lighting, security, climate and entertainment icons linked across the living room" width="745" height="400" loading="lazy" decoding="async"></div>
         <div class="body">
           <div class="svc-top"><span class="ix">02</span></div>
           <h3>Smart Home Systems</h3>
@@ -175,7 +195,7 @@
       </a>
 
       <a class="svc-card reveal" href="services.html#painting">
-        <div class="pic"><img class="shot" src="media/painting-work.jpg" alt="Painter skim-coating and finishing an interior wall on site"></div>
+        <div class="pic"><img class="shot" src="media/painting-work.jpg" alt="Painter skim-coating and finishing an interior wall on site" width="800" height="600" loading="lazy" decoding="async"></div>
         <div class="body">
           <div class="svc-top"><span class="ix">03</span></div>
           <h3>Painting Work</h3>
@@ -185,7 +205,7 @@
       </a>
 
       <a class="svc-card reveal" href="services.html#iron-grills">
-        <div class="pic"><img class="shot" src="media/iron-install-gate.jpg" alt="Powder-coated white horizontal-slat security gate being fitted in a Melaka home"></div>
+        <div class="pic"><img class="shot" src="media/iron-install-gate.jpg" alt="Powder-coated white horizontal-slat security gate being fitted in a Melaka home" width="810" height="1080" loading="lazy" decoding="async"></div>
         <div class="body">
           <div class="svc-top"><span class="ix">04</span></div>
           <h3>Iron Grills &amp; Gates</h3>
@@ -198,7 +218,7 @@
 </section>
 
 <!-- ============ PORTFOLIO ============ -->
-<section class="section folio" id="work" data-screen-label="Portfolio">
+<section class="section folio" id="work">
   <div class="wrap">
     <div class="sec-head reveal">
       <div>
@@ -213,9 +233,9 @@
       <!-- Project 01 -->
       <article class="project reveal">
         <div class="project-gallery">
-          <div class="g-main"><img class="shot lb" data-lb data-lb-group="ambience" data-lb-src="media/ambience-wardrobe-dresser.jpg" src="media/ambience-wardrobe-dresser.jpg" alt="Grey high-gloss bedroom wardrobe with built-in oak dressing table and drawers, Ambience Residence Pulau Gadong"></div>
-          <div class="g-a"><img class="shot lb" data-lb data-lb-group="ambience" data-lb-src="media/ambience-kitchen.jpg" src="media/ambience-kitchen.jpg" alt="White gloss and oak dry-kitchen cabinets with floating shelves, Ambience Residence Pulau Gadong"></div>
-          <div class="g-b"><img class="shot lb" data-lb data-lb-group="ambience" data-lb-src="media/ambience-feature-wall.jpg" src="media/ambience-feature-wall.jpg" alt="Walnut feature wall with floating cabinet, display shelves and low sideboard, Ambience Residence Pulau Gadong"></div>
+          <div class="g-main"><img class="shot lb" data-lb data-lb-group="ambience" data-lb-src="media/ambience-wardrobe-dresser.jpg" src="media/ambience-wardrobe-dresser.jpg" alt="Grey high-gloss bedroom wardrobe with built-in oak dressing table and drawers, Ambience Residence Pulau Gadong" width="810" height="1080" loading="lazy" decoding="async"></div>
+          <div class="g-a"><img class="shot lb" data-lb data-lb-group="ambience" data-lb-src="media/ambience-kitchen.jpg" src="media/ambience-kitchen.jpg" alt="White gloss and oak dry-kitchen cabinets with floating shelves, Ambience Residence Pulau Gadong" width="810" height="1080" loading="lazy" decoding="async"></div>
+          <div class="g-b"><img class="shot lb" data-lb data-lb-group="ambience" data-lb-src="media/ambience-feature-wall.jpg" src="media/ambience-feature-wall.jpg" alt="Walnut feature wall with floating cabinet, display shelves and low sideboard, Ambience Residence Pulau Gadong" width="810" height="1080" loading="lazy" decoding="async"></div>
         </div>
         <div class="project-body">
           <span class="ix">Project 01</span>
@@ -240,10 +260,10 @@
         </div>
         <div class="showroom-grid two">
           <button class="sr-tile" data-lb data-lb-group="ambience" data-lb-src="media/ambience-wardrobe-taupe.jpg" aria-label="Enlarge photo">
-            <img src="media/ambience-wardrobe-taupe.jpg" alt="Tall taupe high-gloss bedroom wardrobe with base drawers, Ambience Residence Pulau Gadong">
+            <img src="media/ambience-wardrobe-taupe.jpg" alt="Tall taupe high-gloss bedroom wardrobe with base drawers, Ambience Residence Pulau Gadong" width="810" height="1080" loading="lazy" decoding="async">
           </button>
           <button class="sr-tile" data-lb data-lb-group="ambience" data-lb-src="media/ambience-pantry.jpg" aria-label="Enlarge photo">
-            <img src="media/ambience-pantry.jpg" alt="Full-height white gloss and oak kitchen pantry unit with open display niche, Ambience Residence Pulau Gadong">
+            <img src="media/ambience-pantry.jpg" alt="Full-height white gloss and oak kitchen pantry unit with open display niche, Ambience Residence Pulau Gadong" width="810" height="1080" loading="lazy" decoding="async">
           </button>
         </div>
       </div>
@@ -251,9 +271,9 @@
       <!-- Project 02 -->
       <article class="project reveal">
         <div class="project-gallery">
-          <div class="g-main"><img class="shot lb" data-lb data-lb-group="showroom" data-lb-src="media/showroom-master.jpg" src="media/showroom-master.jpg" alt="Marble feature headboard with white gloss wardrobe and fluted inserts in the master bedroom, Klebang showroom"></div>
-          <div class="g-a"><img class="shot lb" data-lb data-lb-group="showroom" data-lb-src="media/showroom-entry.jpg" src="media/showroom-entry.jpg" alt="Walnut-framed white gloss entry wardrobe with arched lit niche shelving, Klebang showroom"></div>
-          <div class="g-b"><img class="shot lb" data-lb data-lb-group="showroom" data-lb-src="media/showroom-kids.jpg" src="media/showroom-kids.jpg" alt="Children's bedroom with study desk, fluted panel and overhead storage, Klebang showroom"></div>
+          <div class="g-main"><img class="shot lb" data-lb data-lb-group="showroom" data-lb-src="media/showroom-master.jpg" src="media/showroom-master.jpg" alt="Marble feature headboard with white gloss wardrobe and fluted inserts in the master bedroom, Klebang showroom" width="810" height="1080" loading="lazy" decoding="async"></div>
+          <div class="g-a"><img class="shot lb" data-lb data-lb-group="showroom" data-lb-src="media/showroom-entry.jpg" src="media/showroom-entry.jpg" alt="Walnut-framed white gloss entry wardrobe with arched lit niche shelving, Klebang showroom" width="810" height="1080" loading="lazy" decoding="async"></div>
+          <div class="g-b"><img class="shot lb" data-lb data-lb-group="showroom" data-lb-src="media/showroom-kids.jpg" src="media/showroom-kids.jpg" alt="Children's bedroom with study desk, fluted panel and overhead storage, Klebang showroom" width="810" height="1080" loading="lazy" decoding="async"></div>
         </div>
         <div class="project-body">
           <span class="ix">Project 02</span>
@@ -283,13 +303,13 @@
           <span class="sr-cap">Walkthrough</span>
         </button>
         <button class="sr-tile" data-lb data-lb-group="showroom" data-lb-src="media/showroom-guest.jpg" aria-label="Enlarge photo">
-          <img src="media/showroom-guest.jpg" alt="Guest bedroom with white gloss wardrobe, oak handles and lit glass display shelving, Klebang showroom">
+          <img src="media/showroom-guest.jpg" alt="Guest bedroom with white gloss wardrobe, oak handles and lit glass display shelving, Klebang showroom" width="810" height="1080" loading="lazy" decoding="async">
         </button>
         <button class="sr-tile" data-lb data-lb-group="showroom" data-lb-src="media/showroom-guest-detail.jpg" aria-label="Enlarge photo">
-          <img src="media/showroom-guest-detail.jpg" alt="Detail of guest wardrobe with mirror panel and illuminated glass shelves, Klebang showroom">
+          <img src="media/showroom-guest-detail.jpg" alt="Detail of guest wardrobe with mirror panel and illuminated glass shelves, Klebang showroom" width="810" height="1080" loading="lazy" decoding="async">
         </button>
         <button class="sr-tile" data-lb data-lb-group="showroom" data-lb-src="media/showroom-master-wardrobe.jpg" aria-label="Enlarge photo">
-          <img src="media/showroom-master-wardrobe.jpg" alt="Master bedroom wardrobe in white gloss with vertical fluted inserts and lit open niche, Klebang showroom">
+          <img src="media/showroom-master-wardrobe.jpg" alt="Master bedroom wardrobe in white gloss with vertical fluted inserts and lit open niche, Klebang showroom" width="810" height="1080" loading="lazy" decoding="async">
         </button>
         <button class="sr-tile sr-vid" data-lb data-lb-group="showroom" data-lb-type="video" data-lb-src="media/showroom-walk-2.mp4" aria-label="Play showroom walkthrough video">
           <video class="sr-poster" src="media/showroom-walk-2.mp4#t=0.1" muted playsinline preload="metadata"></video>
@@ -297,10 +317,10 @@
           <span class="sr-cap">Walkthrough</span>
         </button>
         <button class="sr-tile" data-lb data-lb-group="showroom" data-lb-src="media/showroom-kids-2.jpg" aria-label="Enlarge photo">
-          <img src="media/showroom-kids-2.jpg" alt="Children's room study desk with overhead storage, oak shelf and fluted backing, Klebang showroom">
+          <img src="media/showroom-kids-2.jpg" alt="Children's room study desk with overhead storage, oak shelf and fluted backing, Klebang showroom" width="810" height="1080" loading="lazy" decoding="async">
         </button>
         <button class="sr-tile" data-lb data-lb-group="showroom" data-lb-src="media/showroom-kids-desk.jpg" aria-label="Enlarge photo">
-          <img src="media/showroom-kids-desk.jpg" alt="Close view of the study desk, fluted wall panel and overhead cabinets in the children's room, Klebang showroom">
+          <img src="media/showroom-kids-desk.jpg" alt="Close view of the study desk, fluted wall panel and overhead cabinets in the children's room, Klebang showroom" width="810" height="1080" loading="lazy" decoding="async">
         </button>
       </div>
     </div>
@@ -316,7 +336,7 @@
   </div>
 </section>
 <!-- ============ IRON WORK BUILD ============ -->
-<section class="section iron-build" id="ironwork" data-screen-label="Iron work build">
+<section class="section iron-build" id="ironwork">
   <div class="wrap">
     <div class="sec-head reveal">
       <div>
@@ -341,13 +361,13 @@
           <span class="sr-cap">On the saw</span>
         </button>
         <button class="sr-tile" data-lb data-lb-group="iron-fab" data-lb-src="media/iron-fab-cut.jpg" aria-label="Enlarge photo">
-          <img src="media/iron-fab-cut.jpg" alt="Worker cutting a steel bar on an abrasive chop saw, sparks flying, in the Tenn workshop">
+          <img src="media/iron-fab-cut.jpg" alt="Worker cutting a steel bar on an abrasive chop saw, sparks flying, in the Tenn workshop" width="608" height="1080" loading="lazy" decoding="async">
         </button>
         <button class="sr-tile" data-lb data-lb-group="iron-fab" data-lb-src="media/iron-fab-drill.jpg" aria-label="Enlarge photo">
-          <img src="media/iron-fab-drill.jpg" alt="Worker drilling a steel part on a pillar drill press in the workshop">
+          <img src="media/iron-fab-drill.jpg" alt="Worker drilling a steel part on a pillar drill press in the workshop" width="810" height="1080" loading="lazy" decoding="async">
         </button>
         <button class="sr-tile" data-lb data-lb-group="iron-fab" data-lb-src="media/iron-fab-weld.jpg" aria-label="Enlarge photo">
-          <img src="media/iron-fab-weld.jpg" alt="Two fabricators grinding and welding steel grille frames on the workshop floor">
+          <img src="media/iron-fab-weld.jpg" alt="Two fabricators grinding and welding steel grille frames on the workshop floor" width="608" height="1080" loading="lazy" decoding="async">
         </button>
       </div>
     </div>
@@ -366,13 +386,13 @@
           <span class="sr-cap">In the booth</span>
         </button>
         <button class="sr-tile" data-lb data-lb-group="iron-coat" data-lb-src="media/iron-coat-spray.jpg" aria-label="Enlarge photo">
-          <img src="media/iron-coat-spray.jpg" alt="Worker in a mask spraying white powder coat onto a grille inside the spray booth">
+          <img src="media/iron-coat-spray.jpg" alt="Worker in a mask spraying white powder coat onto a grille inside the spray booth" width="960" height="1280" loading="lazy" decoding="async">
         </button>
         <button class="sr-tile" data-lb data-lb-group="iron-coat" data-lb-src="media/iron-coat-rack.jpg" aria-label="Enlarge photo">
-          <img src="media/iron-coat-rack.jpg" alt="Rows of freshly powder-coated white grilles hanging to cure beside the curing oven">
+          <img src="media/iron-coat-rack.jpg" alt="Rows of freshly powder-coated white grilles hanging to cure beside the curing oven" width="960" height="1280" loading="lazy" decoding="async">
         </button>
         <button class="sr-tile" data-lb data-lb-group="iron-coat" data-lb-src="media/iron-coat-booth.jpg" aria-label="Enlarge photo">
-          <img src="media/iron-coat-booth.jpg" alt="Bronze powder-coated balcony grille hanging in the spray booth">
+          <img src="media/iron-coat-booth.jpg" alt="Bronze powder-coated balcony grille hanging in the spray booth" width="960" height="1280" loading="lazy" decoding="async">
         </button>
       </div>
     </div>
@@ -391,10 +411,10 @@
           <span class="sr-cap">On site</span>
         </button>
         <button class="sr-tile" data-lb data-lb-group="iron-install" data-lb-src="media/iron-install-gate.jpg" aria-label="Enlarge photo">
-          <img src="media/iron-install-gate.jpg" alt="Installers fitting a powder-coated white horizontal-slat security gate in a Melaka home">
+          <img src="media/iron-install-gate.jpg" alt="Installers fitting a powder-coated white horizontal-slat security gate in a Melaka home" width="810" height="1080" loading="lazy" decoding="async">
         </button>
-        <button class="sr-tile" data-lb data-lb-group="iron-install" data-lb-src="media/iron-handover.png" aria-label="Enlarge photo">
-          <img src="media/iron-handover.png" alt="Tenn team member showing a homeowner the finished window grille at handover">
+        <button class="sr-tile" data-lb data-lb-group="iron-install" data-lb-src="media/iron-handover.jpg" aria-label="Enlarge photo">
+          <img src="media/iron-handover.jpg" alt="Tenn team member showing a homeowner the finished window grille at handover" width="810" height="1080" loading="lazy" decoding="async">
         </button>
       </div>
     </div>
@@ -402,7 +422,7 @@
 </section>
 
 <!-- ============ SOP / PROCESS ============ -->
-<section class="section sop" id="process" data-screen-label="SOP">
+<section class="section sop" id="process">
   <div class="wrap">
     <div class="sec-head reveal">
       <div>
@@ -444,7 +464,7 @@
           </div>
           <div class="sop-dl">
             <button class="sop-thumb" data-lb data-lb-group="sop-cabinet" data-lb-src="media/sop-cabinet.png" aria-label="View the full cabinet SOP poster">
-              <img src="media/sop-cabinet.png" alt="Cabinet Installation SOP poster">
+              <img src="media/sop-cabinet.png" alt="Cabinet Installation SOP poster" width="1024" height="768" loading="lazy" decoding="async">
             </button>
             <a class="btn btn-dark" href="media/sop-cabinet.png" download="Tenn-Cabinet-Installation-SOP.png">Download SOP</a>
           </div>
@@ -476,7 +496,7 @@
           </div>
           <div class="sop-dl">
             <button class="sop-thumb" data-lb data-lb-group="sop-iron" data-lb-src="media/sop-iron.png" aria-label="View the full iron work SOP poster">
-              <img src="media/sop-iron.png" alt="Iron Work Installation SOP poster">
+              <img src="media/sop-iron.png" alt="Iron Work Installation SOP poster" width="1024" height="768" loading="lazy" decoding="async">
             </button>
             <a class="btn btn-dark" href="media/sop-iron.png" download="Tenn-Iron-Work-Installation-SOP.png">Download SOP</a>
           </div>
@@ -543,7 +563,7 @@
 <section class="section craft" id="craft">
   <div class="wrap">
     <div class="split">
-      <div class="pic reveal"><img class="shot" src="media/team-portrait.jpg" alt="The Tenn Renovation workshop team together at the Melaka studio"></div>
+      <div class="pic reveal"><img class="shot" src="media/team-portrait.jpg" alt="The Tenn Renovation workshop team together at the Melaka studio" width="1080" height="810" loading="lazy" decoding="async"></div>
       <div class="txt reveal">
         <span class="eyebrow">Our story</span>
         <h2>A Melaka workshop, 25 years in the making.</h2>
@@ -591,7 +611,7 @@
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section class="section contact" id="contact" data-screen-label="Contact">
+<section class="section contact" id="contact">
   <div class="wrap">
     <div class="inner">
       <div class="reveal">
@@ -616,12 +636,14 @@
   </div>
 </section>
 
+</main>
+
 <!-- ============ FOOTER ============ -->
 <footer class="foot">
   <div class="wrap">
     <div class="top">
       <div class="brand">
-        <img class="logo-mark" src="media/tenn-logo-light.svg" alt="Tenn Renovation">
+        <img class="logo-mark" src="media/tenn-logo-light.svg" alt="Tenn Renovation" width="640" height="392">
         <p class="bl">Customized cabinets, smart home, painting and iron grills — crafted and installed by one trusted Melaka team since 2001.</p>
       </div>
       <div>
@@ -645,8 +667,8 @@
       <div>
         <h4>Get in touch</h4>
         <ul>
-          <li><a href="#contact">WhatsApp · Royce</a></li>
-          <li><a href="#contact">WhatsApp · Lucas</a></li>
+          <li><a href="https://wa.me/60109718663" target="_blank" rel="noopener">WhatsApp · Royce</a></li>
+          <li><a href="https://wa.me/60163303178" target="_blank" rel="noopener">WhatsApp · Lucas</a></li>
           <li><span style="color:rgba(246,241,232,.72)">Melaka, Malaysia</span></li>
           <li><span style="color:rgba(246,241,232,.72)">Mon–Sat · 9am–6pm</span></li>
         </ul>
@@ -659,6 +681,7 @@
   </div>
 </footer>
 
+<script src="site.js"></script>
 <script>
   // hero carousel — gentle crossfade, auto-advance, pause on hover
   (function(){
@@ -679,34 +702,14 @@
     const hero = document.querySelector('.hero');
     hero.addEventListener('mouseenter', stop);
     hero.addEventListener('mouseleave', start);
-    start();
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ show(0); } else { start(); }
   })();
 
-  // portfolio filter (only present when the filter bar exists)
-  const filterBar = document.getElementById('filters');
-  if(filterBar){
-    const items = [...document.querySelectorAll('.folio-item')];
-    filterBar.addEventListener('click', e => {
-      const btn = e.target.closest('button');
-      if(!btn) return;
-      filterBar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const f = btn.dataset.f;
-      items.forEach(it => {
-        const show = f === 'all' || it.dataset.cat === f;
-        it.classList.toggle('hide', !show);
-      });
-    });
-  }
-
-  // showcase video: load via blob (serve endpoint lacks range support), tap to unmute
+  // showcase reel: tap to unmute; pause while scrolled out of view
   const reel = document.getElementById('reel');
   const muteBtn = document.getElementById('reelMute');
-  if(reel){
-    fetch('media/showcase.mp4')
-      .then(r => r.blob())
-      .then(b => { reel.src = URL.createObjectURL(b); reel.play().catch(()=>{}); })
-      .catch(()=>{});
+  if(reel && 'IntersectionObserver' in window){
+    new IntersectionObserver(([en]) => { if(en.isIntersecting){ reel.play().catch(()=>{}); } else { reel.pause(); } }, { threshold:.25 }).observe(reel);
   }
   if(reel && muteBtn){
     const icon = document.getElementById('muteIcon');
@@ -720,15 +723,6 @@
       icon.innerHTML = reel.muted ? offSvg : onSvg;
     });
   }
-
-  // reveal on scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-  }, { threshold:.14, rootMargin:'0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach((el,i) => {
-    el.style.transitionDelay = (Math.min(i%4,3)*70) + 'ms';
-    io.observe(el);
-  });
 
   // SOP category tabs
   (function(){
@@ -750,18 +744,15 @@
     const countEl = document.getElementById('lbCount');
     const allEls = [...document.querySelectorAll('[data-lb]')];
     let items = [], idx = 0;
-    const blobCache = {};
     const render = () => {
       const it = items[idx];
       stage.innerHTML = '';
       if(it.type === 'video'){
         const v = document.createElement('video');
-        v.controls = true; v.autoplay = true; v.playsInline = true;
-        if(blobCache[it.src]){ v.src = blobCache[it.src]; }
-        else {
-          fetch(it.src).then(r=>r.blob()).then(b=>{ const u=URL.createObjectURL(b); blobCache[it.src]=u; v.src=u; v.play().catch(()=>{}); }).catch(()=>{ v.src = it.src; });
-        }
+        v.controls = true; v.autoplay = true; v.playsInline = true; v.preload = 'auto';
+        v.src = it.src;
         stage.appendChild(v);
+        v.play().catch(()=>{});
       } else {
         const img = document.createElement('img');
         img.src = it.src; img.alt = '';
@@ -792,12 +783,5 @@
   })();
 </script>
 
-<!-- ============ TWEAKS PANEL ============ -->
-<div id="tweaks-root"></div>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script type="text/babel" src="tweaks-panel.jsx"></script>
-<script type="text/babel" src="tweaks-app.jsx"></script>
 </body>
 </html>

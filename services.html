@@ -4,19 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services — Tenn Renovation</title>
+<meta name="description" content="Customized cabinets, smart home systems, painting work and iron grills & gates. One Melaka team that designs, makes and installs across the whole home.">
+<meta name="theme-color" content="#0d1130">
+<link rel="icon" href="media/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tenn Renovation">
+<meta property="og:title" content="Services — Tenn Renovation">
+<meta property="og:description" content="Customized cabinets, smart home systems, painting work and iron grills & gates. One Melaka team that designs, makes and installs across the whole home.">
+<meta property="og:locale" content="en_MY">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <!-- ============ HEADER ============ -->
-<header class="site-head">
+<header class="site-head" id="siteHead">
   <div class="wrap bar">
     <a class="brand" href="index.html" aria-label="Tenn Renovation home">
-      <img class="logo-mark" src="media/tenn-logo.svg" alt="Tenn Renovation">
+      <img class="logo-mark" src="media/tenn-logo.svg" alt="Tenn Renovation" width="640" height="392">
     </a>
-    <nav class="nav" aria-label="Primary">
+    <nav class="nav" id="siteNav" aria-label="Primary">
       <a class="link" href="index.html#work">Work</a>
-      <a class="link" href="index.html#services">Services</a>
+      <a class="link" href="services.html" aria-current="page">Services</a>
       <a class="link" href="index.html#process">Process</a>
       <a class="link" href="index.html#craft">About</a>
       <div class="nav-cta">
@@ -24,11 +38,16 @@
         <a class="btn btn-wa" href="quote.html">Request a quote</a>
       </div>
     </nav>
+    <div class="bar-actions">
+      <a class="btn btn-wa btn-sm" href="quote.html">Get a quote</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
+<main id="main">
 
 <!-- ============ PAGE HERO ============ -->
-<section class="page-hero" data-screen-label="Services hero">
+<section class="page-hero">
   <div class="wrap">
     <div class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; Services</div>
     <span class="eyebrow" style="color:var(--brass)">What we do</span>
@@ -37,16 +56,16 @@
     <p>We're one team that designs, makes and installs across the whole home — so your cabinetry, finishes, systems and metalwork all line up the way they should.</p>
     <div class="hero-actions" style="margin-top:34px">
       <a class="btn btn-brass" href="#cabinetry">Start with cabinetry <span class="arr">→</span></a>
-      <a class="btn btn-ghost" href="quote.html" style="color:#fff;border-color:rgba(255,255,255,.4)">Get a quote</a>
+      <a class="btn btn-ghost inv" href="quote.html">Get a quote</a>
     </div>
   </div>
 </section>
 
 <!-- ============ CABINETRY ============ -->
-<section class="section svc-detail" id="cabinetry" data-screen-label="Cabinetry">
+<section class="section svc-detail" id="cabinetry">
   <div class="wrap">
     <div class="split">
-      <div class="pic reveal"><img class="shot" src="media/cabinetry-walnut.png" alt="Floor-to-ceiling walnut cabinetry with brass handles, lit glass display and marble island"></div>
+      <div class="pic reveal"><img class="shot" src="media/cabinetry-walnut.jpg" alt="Floor-to-ceiling walnut cabinetry with brass handles, lit glass display and marble island" width="1408" height="768" loading="lazy" decoding="async"></div>
       <div class="txt reveal">
         <span class="ix">01 — Our signature craft</span>
         <h2>Customized Cabinets</h2>
@@ -67,10 +86,10 @@
 </section>
 
 <!-- ============ SMART HOME ============ -->
-<section class="section svc-detail feature" id="smart-home" data-screen-label="Smart home">
+<section class="section svc-detail feature" id="smart-home">
   <div class="wrap">
     <div class="split">
-      <div class="pic reveal"><img class="shot" src="media/smart-home.png" alt="Wall-mounted smart lighting control panel in a kitchen at dusk"></div>
+      <div class="pic reveal"><img class="shot" src="media/smart-home.jpg" alt="Person controlling a connected smart home from a tablet, with lighting, security, climate and entertainment linked across the living room" width="745" height="400" loading="lazy" decoding="async"></div>
       <div class="txt reveal">
         <span class="ix">02</span>
         <h2>Smart Home Systems</h2>
@@ -90,10 +109,10 @@
 </section>
 
 <!-- ============ PAINTING ============ -->
-<section class="section svc-detail" id="painting" data-screen-label="Painting">
+<section class="section svc-detail" id="painting">
   <div class="wrap">
     <div class="split">
-      <div class="pic reveal"><div class="ph" data-label="painting — clean feature wall, sharp cut-in lines"></div></div>
+      <div class="pic reveal"><img class="shot" src="media/painting-work.jpg" alt="Painter skim-coating and finishing an interior wall on site" width="800" height="600" loading="lazy" decoding="async"></div>
       <div class="txt reveal">
         <span class="ix">03</span>
         <h2>Painting Work</h2>
@@ -113,10 +132,10 @@
 </section>
 
 <!-- ============ IRON GRILLS ============ -->
-<section class="section svc-detail feature" id="iron-grills" data-screen-label="Iron grills">
+<section class="section svc-detail feature" id="iron-grills">
   <div class="wrap">
     <div class="split">
-      <div class="pic reveal"><img class="shot" src="media/iron-install-gate.jpg" alt="Powder-coated white horizontal-slat security gate fitted in a Melaka home"></div>
+      <div class="pic reveal"><img class="shot" src="media/iron-install-gate.jpg" alt="Powder-coated white horizontal-slat security gate fitted in a Melaka home" width="810" height="1080" loading="lazy" decoding="async"></div>
       <div class="txt reveal">
         <span class="ix">04</span>
         <h2>Iron Grills &amp; Gates</h2>
@@ -156,7 +175,7 @@
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section class="section contact" id="contact" data-screen-label="Contact">
+<section class="section contact" id="contact">
   <div class="wrap">
     <div class="inner">
       <div class="reveal">
@@ -170,11 +189,11 @@
         <div class="lbl">Message us on WhatsApp</div>
         <div class="person">
           <div><div class="nm">Royce</div><div class="rl">Cabinetry &amp; project lead</div></div>
-          <a class="wa-pill" href="https://wa.me/60163303178" target="_blank" rel="noopener">Chat →</a>
+          <a class="wa-pill" href="https://wa.me/60109718663" target="_blank" rel="noopener">Chat →</a>
         </div>
         <div class="person">
           <div><div class="nm">Lucas</div><div class="rl">Smart home &amp; finishing</div></div>
-          <a class="wa-pill" href="https://wa.me/60109718663" target="_blank" rel="noopener">Chat →</a>
+          <a class="wa-pill" href="https://wa.me/60163303178" target="_blank" rel="noopener">Chat →</a>
         </div>
         <p class="muted" style="font-size:13px;margin-top:18px;color:rgba(246,241,232,.55)">Serving Melaka &amp; surrounding areas · Mon–Sat, 9am–6pm</p>
       </div>
@@ -182,12 +201,14 @@
   </div>
 </section>
 
+</main>
+
 <!-- ============ FOOTER ============ -->
 <footer class="foot">
   <div class="wrap">
     <div class="top">
       <div class="brand">
-        <img class="logo-mark" src="media/tenn-logo-light.svg" alt="Tenn Renovation">
+        <img class="logo-mark" src="media/tenn-logo-light.svg" alt="Tenn Renovation" width="640" height="392">
         <p class="bl">Customized cabinets, smart home, painting and iron grills — crafted and installed by one trusted Melaka team since 2001.</p>
       </div>
       <div>
@@ -211,8 +232,8 @@
       <div>
         <h4>Get in touch</h4>
         <ul>
-          <li><a href="#contact">WhatsApp · Royce</a></li>
-          <li><a href="#contact">WhatsApp · Lucas</a></li>
+          <li><a href="https://wa.me/60109718663" target="_blank" rel="noopener">WhatsApp · Royce</a></li>
+          <li><a href="https://wa.me/60163303178" target="_blank" rel="noopener">WhatsApp · Lucas</a></li>
           <li><span style="color:rgba(246,241,232,.72)">Melaka, Malaysia</span></li>
           <li><span style="color:rgba(246,241,232,.72)">Mon–Sat · 9am–6pm</span></li>
         </ul>
@@ -225,11 +246,6 @@
   </div>
 </footer>
 
-<script>
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-  }, { threshold:.14, rootMargin:'0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-</script>
+<script src="site.js"></script>
 </body>
 </html>
