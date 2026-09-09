@@ -644,6 +644,38 @@ p{ margin:0; }
   .svc-detail.feature .pic{ order:0; }
 }
 
+/* ---------- floating WhatsApp button ---------- */
+.wa-float{
+  position:fixed; right:18px; bottom:18px; z-index:60;
+  display:inline-flex; align-items:center; gap:10px;
+  background:#1f8a4c; color:#fff; font-weight:700; font-size:14.5px; letter-spacing:.01em;
+  padding:13px 20px 13px 16px; border-radius:40px;
+  box-shadow:0 14px 34px -10px rgba(31,138,76,.65), 0 0 0 1px rgba(255,255,255,.12) inset;
+  transition:transform .35s var(--ease), opacity .35s var(--ease), background .3s var(--ease);
+}
+.wa-float svg{ width:24px; height:24px; flex:none; }
+.wa-float:hover{ background:#196e3d; transform:translateY(-2px); }
+.wa-float.is-hidden{ opacity:0; transform:translateY(24px); pointer-events:none; }
+@media (max-width:560px){
+  .wa-float{ right:14px; bottom:14px; padding:14px; }
+  .wa-float span{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .wa-float svg{ width:26px; height:26px; }
+}
+
+/* ---------- prose pages (privacy notice) ---------- */
+.page-hero-compact{ padding-block: clamp(64px,9vw,104px) clamp(44px,6vw,72px); }
+.page-hero-compact h1{ font-size:clamp(36px,5vw,64px); }
+.prose{ max-width:70ch; }
+.prose-meta{ font-size:13px; letter-spacing:.04em; color:var(--muted); padding-bottom:22px; border-bottom:1px solid var(--line); }
+.prose h2{ font-size:clamp(21px,2.4vw,28px); margin-top:clamp(34px,4vw,48px); }
+.prose h2 + p, .prose p + p, .prose ul + p{ margin-top:14px; }
+.prose p{ color:var(--ink-soft); }
+.prose ul{ margin:14px 0 0; padding-left:22px; display:grid; gap:10px; color:var(--ink-soft); }
+.prose li strong{ color:var(--ink); }
+.prose a{ color:var(--walnut-d); text-decoration:underline; text-underline-offset:3px; }
+.prose a:hover{ color:var(--ink); }
+.q-send .fine a{ color:var(--walnut-d); text-decoration:underline; text-underline-offset:2px; }
+
 /* ---------- quote page ---------- */
 .quote-wrap{ background:var(--cream); }
 .quote-layout{
