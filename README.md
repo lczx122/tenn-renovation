@@ -18,7 +18,7 @@ Shared files: `styles.css` (design system), `site.js` (header, mobile nav, count
 1. **Analytics.** In `site.js`, set `GA_MEASUREMENT_ID` to your Google Analytics 4 measurement ID (`G-XXXXXXXXXX`).
    Until it is set nothing is loaded. Once set, every WhatsApp button reports a `whatsapp_click` event (which person,
    which placement) and the quote form reports `generate_lead`. No names or phone numbers are sent.
-2. **Public URL.** The site assumes `https://lczx122.github.io/tenn-renovation/`. If you host it elsewhere,
+2. **Public URL.** The site lives at `https://tennrenovation.com/` (the `CNAME` file tells GitHub Pages so). If you move it,
    search-and-replace that string across the HTML files, `sitemap.xml` and `robots.txt`.
 
 ## Facts to confirm before showing investors
