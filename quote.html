@@ -3,21 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Request a Quote — Tenn Renovation</title>
+<title>Contact & Request a Quote — Tenn Renovation</title>
 <meta name="description" content="Tell us what you're planning and we'll prepare a WhatsApp message to our team. We'll visit, measure up and come back with a clear, honest quote.">
 <meta name="theme-color" content="#0d1130">
+<link rel="canonical" href="https://lczx122.github.io/tenn-renovation/quote.html">
 <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="media/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tenn Renovation">
-<meta property="og:title" content="Request a Quote — Tenn Renovation">
+<meta property="og:title" content="Contact & Request a Quote — Tenn Renovation">
 <meta property="og:description" content="Tell us what you're planning and we'll prepare a WhatsApp message to our team. We'll visit, measure up and come back with a clear, honest quote.">
+<meta property="og:url" content="https://lczx122.github.io/tenn-renovation/quote.html">
 <meta property="og:image" content="https://lczx122.github.io/tenn-renovation/media/hero-kitchen.jpg">
 <meta property="og:locale" content="en_MY">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {
@@ -25,7 +27,7 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lczx122.github.io/tenn-renovation/" },
-    { "@type": "ListItem", "position": 2, "name": "Request a quote", "item": "https://lczx122.github.io/tenn-renovation/quote.html" }
+    { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://lczx122.github.io/tenn-renovation/quote.html" }
   ]
 }
 </script>
@@ -35,23 +37,23 @@
 <a class="skip-link" href="#main">Skip to content</a>
 
 <!-- ============ HEADER ============ -->
-<header class="site-head" id="siteHead">
+<header class="site-head over-dark" id="siteHead">
   <div class="wrap bar">
     <a class="brand" href="index.html" aria-label="Tenn Renovation home">
-      <img class="logo-mark" src="media/tenn-logo.svg" alt="Tenn Renovation" width="640" height="392">
+      <img class="logo-mark logo-dark" src="media/tenn-logo.svg" alt="Tenn Renovation" width="640" height="392">
+      <img class="logo-mark logo-light" src="media/tenn-logo-light.svg" alt="" aria-hidden="true" width="640" height="392">
     </a>
     <nav class="nav" id="siteNav" aria-label="Primary">
-      <a class="link" href="index.html#work">Work</a>
+      <a class="link" href="company.html">Company</a>
       <a class="link" href="services.html">Services</a>
-      <a class="link" href="index.html#process">Process</a>
-      <a class="link" href="index.html#craft">About</a>
+      <a class="link" href="projects.html">Projects</a>
+      <a class="link" href="quote.html" aria-current="page">Contact</a>
       <div class="nav-cta">
-        <a class="btn btn-ghost" href="index.html#work">Browse portfolio</a>
-        <a class="btn btn-wa" href="#quote-form">Request a quote</a>
+        <a class="btn btn-brass btn-sm" href="quote.html">Request a quote</a>
       </div>
     </nav>
     <div class="bar-actions">
-      <a class="btn btn-wa btn-sm" href="#quote-form">Get a quote</a>
+      <a class="btn btn-brass btn-sm" href="quote.html">Get a quote</a>
       <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -59,52 +61,44 @@
 <main id="main">
 
 <!-- ============ PAGE HERO ============ -->
-<section class="page-hero">
+<section class="page-hero compact">
+  <div class="bg"><img class="shot" src="media/ambience-kitchen.jpg" alt="" width="810" height="1080" loading="lazy" decoding="async"></div>
   <div class="wrap">
-    <div class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; Request a quote</div>
-    <span class="eyebrow" style="color:var(--brass)">Free, no obligation</span>
-    <h1 style="margin-top:20px">Tell us what you're planning.</h1>
+    <div class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</div>
+    <span class="eyebrow">Free, no obligation</span>
+    <h1>Let's plan your <em>renovation.</em></h1>
     <p class="zh-head" lang="zh">告诉我们您的装修计划。</p>
-    <p>Answer a few quick questions and we'll prepare a WhatsApp message to send straight to our team. We'll arrange a visit, measure up, and come back with a clear, honest quote.</p>
+    <p class="lead">Answer a few quick questions and we'll prepare a WhatsApp message to send straight to our team — or message Royce or Lucas directly.</p>
   </div>
 </section>
 
-<!-- ============ QUOTE ============ -->
-<section class="section quote-wrap" id="quote-form">
+<!-- ============ CONTACT ============ -->
+<section class="section" id="quote-form">
   <div class="wrap">
-    <div class="quote-layout">
-
-      <!-- LEFT — what happens next -->
-      <aside class="quote-aside reveal">
+    <div class="contact-grid">
+      <aside class="contact-aside reveal" id="contact">
         <span class="eyebrow">How it works</span>
         <h2>From message to measured quote.</h2>
         <p class="zh-head" lang="zh">从一条讯息，到上门测量报价。</p>
         <p class="lead">No forms lost in an inbox. Your answers open a ready-to-send WhatsApp chat with our team — usually a reply the same day.</p>
         <ol class="q-steps">
-          <li>
-            <span class="qn"></span>
-            <span class="qt"><b>Send your details</b><span>Fill this in and tap send — it opens WhatsApp with everything filled in.</span></span>
-          </li>
-          <li>
-            <span class="qn"></span>
-            <span class="qt"><b>We arrange a visit</b><span>We agree a time, come to site and template the space precisely.</span></span>
-          </li>
-          <li>
-            <span class="qn"></span>
-            <span class="qt"><b>You get a clear quote</b><span>An itemised, fixed quote — refined with you until it's right.</span></span>
-          </li>
+          <li><span class="qn"></span><span class="qt"><b>Send your details</b><span>Fill this in and tap send — it opens WhatsApp with everything filled in.</span></span></li>
+          <li><span class="qn"></span><span class="qt"><b>We arrange a visit</b><span>We agree a time, come to site and template the space precisely.</span></span></li>
+          <li><span class="qn"></span><span class="qt"><b>You get a clear quote</b><span>An itemised, fixed quote — refined with you until it's right.</span></span></li>
         </ol>
+        <div class="direct">
+          <div class="person"><div><div class="nm">Royce</div><div class="rl">Cabinetry &amp; project lead</div></div><a class="wa-pill" href="https://wa.me/60109718663" target="_blank" rel="noopener">Chat →</a></div>
+          <div class="person"><div><div class="nm">Lucas</div><div class="rl">Smart home &amp; finishing</div></div><a class="wa-pill" href="https://wa.me/60163303178" target="_blank" rel="noopener">Chat →</a></div>
+        </div>
         <div class="quote-reassure"><span class="dot-ok"></span> Mon–Sat · 9am–6pm · Serving Melaka &amp; surrounds</div>
       </aside>
 
-      <!-- RIGHT — the form -->
       <div class="q-card reveal">
         <div class="q-card-head">
           <div class="lbl">Request a quote</div>
           <h3>A few quick questions</h3>
           <p>Only your name and contact are required — the rest just helps us prepare a more useful quote.</p>
         </div>
-
         <form class="q-form" id="quoteForm" novalidate>
 
           <div class="q-grid-2">
@@ -193,7 +187,6 @@
 
         </form>
       </div>
-
     </div>
   </div>
 </section>
@@ -206,7 +199,7 @@
     <div class="top">
       <div class="brand">
         <img class="logo-mark" src="media/tenn-logo-light.svg" alt="Tenn Renovation" width="640" height="392">
-        <p class="bl">Customized cabinets, smart home, painting and iron grills — crafted and installed by one trusted Melaka team since 2001.</p>
+        <p class="bl">Customized cabinets, smart home systems, painting and iron grills — designed, made and installed by one Melaka team since 2001.</p>
       </div>
       <div>
         <h4>Services</h4>
@@ -215,15 +208,17 @@
           <li><a href="services.html#smart-home">Smart home systems</a></li>
           <li><a href="services.html#painting">Painting work</a></li>
           <li><a href="services.html#iron-grills">Iron grills &amp; gates</a></li>
+          <li><a href="services.html#process">Our SOP</a></li>
         </ul>
       </div>
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="index.html#work">Portfolio</a></li>
-          <li><a href="index.html#process">Our process</a></li>
-          <li><a href="index.html#craft">About us</a></li>
-          <li><a href="quote.html">Request a quote</a></li>
+          <li><a href="company.html">Company profile</a></li>
+          <li><a href="company.html#leadership">Leadership</a></li>
+          <li><a href="company.html#growth">Investors &amp; partners</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="privacy.html">Privacy notice</a></li>
         </ul>
       </div>
       <div>
@@ -231,8 +226,9 @@
         <ul>
           <li><a href="https://wa.me/60109718663" target="_blank" rel="noopener">WhatsApp · Royce</a></li>
           <li><a href="https://wa.me/60163303178" target="_blank" rel="noopener">WhatsApp · Lucas</a></li>
-          <li><span style="color:rgba(246,241,232,.72)">Melaka, Malaysia</span></li>
-          <li><span style="color:rgba(246,241,232,.72)">Mon–Sat · 9am–6pm</span></li>
+          <li><a href="quote.html">Request a quote</a></li>
+          <li><span>Melaka, Malaysia</span></li>
+          <li><span>Mon–Sat · 9am–6pm</span></li>
         </ul>
       </div>
     </div>
