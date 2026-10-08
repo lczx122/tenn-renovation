@@ -7,7 +7,7 @@ Static site, no build step. Open `index.html` in a browser or serve the folder w
 | `index.html` | Home: hero, key figures, services, showcase reel, why Tenn, featured projects, process, testimonials, contact |
 | `company.html` | Company profile: story, values, milestones, capabilities, leadership, growth & investor/partner enquiries |
 | `services.html` | The four crafts in depth, the iron-work build gallery, and the SOP for each craft |
-| `projects.html` | Ambience Residence (Pulau Gadong), the Klebang showroom, and the Alor Gajah teaser |
+| `projects.html` | Ambience Pulau Gadong (B2C cabinet package), Klebang showroom (B2B show unit), Bukit Baru showroom (B2B lobby), and Kota Syahbandar (B2C fully furnished package, next) |
 | `quote.html` | Contact page with direct WhatsApp links and the quote form (opens a prefilled WhatsApp chat) |
 | `privacy.html` | PDPA privacy notice |
 
@@ -26,11 +26,11 @@ Shared files: `styles.css` (design system), `site.js` (header, mobile nav, count
 These are written from the information on the old site. Please check and correct them in `company.html` and `index.html`:
 
 - Founded **2001** (used throughout, including the 25-year seal).
-- **300+ homes** across **two** Ambience Residence developments at Pulau Gadong.
+- **300+ homes** fitted with cabinet packages at Ambience Pulau Gadong.
 - The milestone timeline has no years for the "Growth", "Ambience" and "Klebang" entries. Add real years in
   `company.html` under `#milestones` (replace the word in `<div class="yr">`).
-- "Next · Expansion" describes further showroom and capacity growth in general terms. Replace with the real plan
-  (locations, timing, capital use) once you can share it.
+- The Bukit Baru showroom lobby has no photos yet; its project entry is text only until you add some.
+- Kota Syahbandar is described as "in planning" with no dates or unit counts. Add them once confirmed.
 - Testimonials on the home page carry first names and areas only. Swap in real, attributable reviews.
 - No address, phone number, email, SSM registration number or social links are shown yet.
 
