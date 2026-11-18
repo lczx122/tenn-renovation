@@ -1,29 +1,121 @@
 /* Tenn Renovation — shared behaviour
-   analytics · header state · mobile nav · reveal · counters · lightbox · SOP tabs · subnav · floating chat */
+   settings · analytics & pixels · attribution · lead capture · header state · mobile nav · reveal · counters · lightbox · SOP tabs · subnav · floating chat */
 
 /* ---- Settings ---------------------------------------------------------
-   GA_MEASUREMENT_ID: paste your Google Analytics 4 measurement ID (looks
-   like "G-XXXXXXXXXX") to switch analytics on. Leave empty to load nothing.
+   Fill these in once; nothing loads or sends until a value is set.
+   GA_MEASUREMENT_ID : Google Analytics 4 id, e.g. 'G-XXXXXXXXXX'
+   GTM_ID            : Google Tag Manager container, e.g. 'GTM-XXXXXXX'
+                       (use this instead of GA/pixel ids if you manage tags in GTM)
+   META_PIXEL_ID     : Meta (Facebook/Instagram) pixel id, e.g. '123456789012345'
+   LEAD              : where quote-form submissions are recorded (your CRM).
+     kind : 'webhook'   -> POST JSON to LEAD.url (Make, Zapier, n8n, Google Apps Script, your own API)
+            'formspree' -> POST JSON to LEAD.url (https://formspree.io/f/xxxx); emails you + keeps a list
+            'web3forms' -> POST to Web3Forms with LEAD.web3formsKey; emails you, free
+            'hubspot'   -> HubSpot Forms API with LEAD.hubspot.portalId + formId (free HubSpot CRM)
+            ''          -> record nothing; the form only opens WhatsApp (current behaviour)
+   See README.md for step-by-step setup of each option.
    ---------------------------------------------------------------------- */
-const GA_MEASUREMENT_ID = '';
+const TENN_CONFIG = {
+  GA_MEASUREMENT_ID: '',
+  GTM_ID: '',
+  META_PIXEL_ID: '',
+  LEAD: {
+    kind: '',
+    url: '',
+    web3formsKey: '',
+    hubspot: { portalId: '', formId: '', region: 'na1' }
+  }
+};
 
 (function(){
   const hasIO = 'IntersectionObserver' in window;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ---- analytics (only loads when an ID is set) ----
+  // ---- analytics & pixels (each loads only when its id is set) ----
+  window.dataLayer = window.dataLayer || [];
   window.tennTrack = function(name, params){
-    if(typeof window.gtag === 'function'){ window.gtag('event', name, params || {}); }
+    params = params || {};
+    if(typeof window.gtag === 'function'){ window.gtag('event', name, params); }
+    else if(TENN_CONFIG.GTM_ID){ window.dataLayer.push(Object.assign({ event: name }, params)); }
+    if(typeof window.fbq === 'function' && name === 'generate_lead'){ window.fbq('track', 'Lead'); }
   };
-  if(GA_MEASUREMENT_ID){
-    window.dataLayer = window.dataLayer || [];
+  if(TENN_CONFIG.GTM_ID){
+    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    const g = document.createElement('script'); g.async = true;
+    g.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(TENN_CONFIG.GTM_ID);
+    document.head.appendChild(g);
+  } else if(TENN_CONFIG.GA_MEASUREMENT_ID){
     window.gtag = function(){ window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
-    window.gtag('config', GA_MEASUREMENT_ID, { anonymize_ip:true });
-    const s = document.createElement('script');
-    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_MEASUREMENT_ID);
+    window.gtag('config', TENN_CONFIG.GA_MEASUREMENT_ID, { anonymize_ip:true });
+    const s = document.createElement('script'); s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(TENN_CONFIG.GA_MEASUREMENT_ID);
     document.head.appendChild(s);
   }
+  if(TENN_CONFIG.META_PIXEL_ID && !window.fbq){
+    const f = function(){ f.callMethod ? f.callMethod.apply(f, arguments) : f.queue.push(arguments); };
+    f.queue = []; f.loaded = true; f.version = '2.0'; window.fbq = f; window._fbq = f;
+    const p = document.createElement('script'); p.async = true; p.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    document.head.appendChild(p);
+    window.fbq('init', TENN_CONFIG.META_PIXEL_ID); window.fbq('track', 'PageView');
+  }
+
+  // ---- attribution: remember how the visitor arrived (no personal data) ----
+  const ATTR_KEY = 'tenn_attr';
+  const readAttr = () => { try { return JSON.parse(localStorage.getItem(ATTR_KEY) || 'null'); } catch(e){ return null; } };
+  (function captureAttribution(){
+    const q = new URLSearchParams(location.search);
+    const touch = {};
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid','ttclid'].forEach(k => { if(q.get(k)) touch[k] = q.get(k); });
+    const ref = document.referrer && !document.referrer.includes(location.hostname) ? document.referrer : '';
+    if(ref) touch.referrer = ref;
+    touch.landing = location.pathname + location.search.replace(/([?&])(name|phone)=[^&]*/g, '');
+    touch.at = new Date().toISOString();
+    const hasSignal = Object.keys(touch).some(k => k !== 'landing' && k !== 'at');
+    let stored = readAttr() || {};
+    if(!stored.first) stored.first = touch;
+    if(hasSignal || !stored.last) stored.last = touch;
+    try { localStorage.setItem(ATTR_KEY, JSON.stringify(stored)); } catch(e){}
+  })();
+  window.tennAttribution = () => readAttr() || {};
+
+  // ---- lead capture: send a quote-form submission to the configured CRM/endpoint ----
+  // Returns a promise resolving to true when the endpoint accepted it; never throws.
+  window.tennSendLead = async function(lead){
+    const C = TENN_CONFIG.LEAD || {};
+    const kind = (C.kind || '').toLowerCase();
+    if(!kind) return false;
+    const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 8000);
+    const post = (url, body, headers) => fetch(url, { method:'POST', mode:'cors', keepalive:true, signal:ctrl.signal,
+      headers: Object.assign({ 'Content-Type':'application/json', 'Accept':'application/json' }, headers || {}), body: JSON.stringify(body) });
+    try {
+      let r;
+      if(kind === 'webhook' || kind === 'formspree'){
+        if(!C.url) return false;
+        r = await post(C.url, lead);
+      } else if(kind === 'web3forms'){
+        if(!C.web3formsKey) return false;
+        r = await post('https://api.web3forms.com/submit', Object.assign({ access_key: C.web3formsKey, subject: 'New quote request: ' + (lead.name || ''), from_name: 'tennrenovation.com' }, lead));
+      } else if(kind === 'hubspot'){
+        const h = C.hubspot || {};
+        if(!h.portalId || !h.formId) return false;
+        const hutk = (document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/) || [])[1];
+        const body = {
+          fields: [
+            { name:'firstname', value: lead.name || '' },
+            { name:'phone', value: lead.phone || '' },
+            { name:'message', value: lead.summary || '' }
+          ],
+          context: Object.assign({ pageUri: location.href, pageName: document.title }, hutk ? { hutk } : {}),
+          legalConsentOptions: { consent: { consentToProcess: true, text: lead.consent_text || 'I agree to be contacted about this enquiry.', communications: [] } }
+        };
+        r = await post('https://api.hsforms.com/submissions/v3/integration/submit/' + encodeURIComponent(h.portalId) + '/' + encodeURIComponent(h.formId), body);
+      } else { return false; }
+      clearTimeout(t);
+      return !!(r && r.ok);
+    } catch(e){ clearTimeout(t); return false; }
+  };
+
   const PEOPLE = { '60109718663':'Royce', '60163303178':'Lucas' };
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href*="wa.me/"], a[href^="tel:"]');

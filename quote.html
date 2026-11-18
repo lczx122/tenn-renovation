@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact & Request a Quote — Tenn Renovation</title>
-<meta name="description" content="Tell us what you're planning and we'll prepare a WhatsApp message to our team. We'll visit, measure up and come back with a clear, honest quote.">
+<title>Free Renovation Quote in Melaka | Tenn Renovation</title>
+<meta name="description" content="Request a free, no-obligation renovation quote in Melaka. Tell us about your home, we visit and measure, and you get a clear itemised quote. WhatsApp Royce directly or use the quick form.">
 <meta name="theme-color" content="#0d1130">
 <link rel="canonical" href="https://tennrenovation.com/quote.html">
 <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="media/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tenn Renovation">
-<meta property="og:title" content="Contact & Request a Quote — Tenn Renovation">
-<meta property="og:description" content="Tell us what you're planning and we'll prepare a WhatsApp message to our team. We'll visit, measure up and come back with a clear, honest quote.">
+<meta property="og:title" content="Free Renovation Quote in Melaka | Tenn Renovation">
+<meta property="og:description" content="Request a free, no-obligation renovation quote in Melaka. Tell us about your home, we visit and measure, and you get a clear itemised quote. WhatsApp Royce directly or use the quick form.">
 <meta property="og:url" content="https://tennrenovation.com/quote.html">
-<meta property="og:image" content="https://tennrenovation.com/media/hero-kitchen.jpg">
+<meta property="og:image" content="https://tennrenovation.com/media/og-cover.jpg">
 <meta property="og:locale" content="en_MY">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=20261118a">
+<link rel="stylesheet" href="styles.css?v=20261118b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -178,6 +178,10 @@
             </div>
           </div>
 
+          <div class="q-field q-consent">
+            <label class="q-check"><input type="checkbox" id="qConsent" name="consent" value="yes"><span>I agree to Tenn Renovation contacting me about this enquiry and keeping my details as described in the <a href="privacy.html" target="_blank" rel="noopener">privacy notice</a>.</span></label>
+          </div>
+
           <p class="q-err" id="qErr">Please add your name and a contact number so we can reach you.</p>
 
           <div class="q-send">
@@ -189,6 +193,16 @@
           </div>
 
         </form>
+        <div class="q-done" id="qDone" hidden>
+          <div class="q-done-ic" aria-hidden="true">✓</div>
+          <h3>Thanks, <span id="qDoneName"></span> — your request is ready.</h3>
+          <p>WhatsApp should have opened with your details filled in. Press <b>Send</b> there and we'll reply within working hours (Mon–Sat, 9am–6pm).</p>
+          <p id="qDoneLogged" hidden>We've also logged your request, so even if WhatsApp didn't open we have your number and will be in touch.</p>
+          <div class="q-done-actions">
+            <a class="btn btn-wa" id="qDoneWa" href="#" target="_blank" rel="noopener">Open WhatsApp again <span class="arr">→</span></a>
+            <a class="btn btn-ghost" href="projects.html">Browse projects meanwhile</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -237,6 +251,11 @@
         </ul>
       </div>
     </div>
+    <div class="areas">
+      <span class="lbl">Renovation contractor · Kontraktor ubahsuai rumah</span>
+      <span>Serving Melaka &amp; surrounding areas: Ayer Keroh · Bukit Beruang · Bukit Baru · Klebang · Kota Syahbandar · Pulau Gadong · Melaka Raya · Batu Berendam · Alor Gajah · Jasin</span>
+      <span class="tag-line">Satu contact, semua settle.</span>
+    </div>
     <div class="bot">
       <span>© 2026 Tenn Renovation. All rights reserved.</span>
       <span>Melaka · Malaysia</span>
@@ -244,7 +263,7 @@
   </div>
 </footer>
 
-<script src="site.js?v=20261118a"></script>
+<script src="site.js?v=20261118b"></script>
 <script>
   // quote form → compose a tidy WhatsApp message and open the chat
   (function(){
@@ -280,14 +299,22 @@
       const data = new FormData(form);
       const name = (data.get('name') || '').toString().trim();
       const phone = (data.get('phone') || '').toString().trim();
+      const consentBox = document.getElementById('qConsent');
 
-      // validate the two required fields
+      // validate the two required fields + consent
       let ok = true;
       const nameField = document.getElementById('qName').closest('.q-field');
       const phoneField = document.getElementById('qPhone').closest('.q-field');
+      const consentField = consentBox.closest('.q-field');
       if(!name){ nameField.classList.add('invalid'); ok = false; }
       if(!phone){ phoneField.classList.add('invalid'); ok = false; }
-      if(!ok){ err.classList.add('show'); (name ? phoneField : nameField).querySelector('input').focus(); return; }
+      if(!consentBox.checked){ consentField.classList.add('invalid'); ok = false; }
+      if(!ok){
+        err.textContent = (!name || !phone) ? 'Please add your name and a contact number so we can reach you.' : 'Please tick the box so we can contact you about your enquiry.';
+        err.classList.add('show');
+        (!name ? nameField.querySelector('input') : !phone ? phoneField.querySelector('input') : consentBox).focus();
+        return;
+      }
 
       const services = data.getAll('service').map(s => decode(s.toString()));
       const ptype = (data.get('ptype') || '').toString();
@@ -296,26 +323,48 @@
       const timeline = (data.get('timeline') || '').toString();
       const msg = (data.get('message') || '').toString().trim();
       const recipient = (data.get('recipient') || '60109718663').toString();
+      const person = recipient === '60163303178' ? 'Lucas' : 'Royce';
 
-      // build the message
+      // build the WhatsApp message
       const L = [];
-      L.push('Hi Tenn Renovation, I’d like to request a quote.');
+      L.push('Hi Tenn Renovation, I\u2019d like to request a quote.');
       L.push('');
-      L.push('• Name: ' + name);
-      L.push('• Contact: ' + phone);
-      if(area)            L.push('• Location: ' + area);
-      if(services.length) L.push('• Looking for: ' + services.join(', '));
-      if(ptype)           L.push('• Project type: ' + ptype);
-      if(budget)          L.push('• Budget: ' + budget);
-      if(timeline)        L.push('• Timeline: ' + timeline);
+      L.push('\u2022 Name: ' + name);
+      L.push('\u2022 Contact: ' + phone);
+      if(area)            L.push('\u2022 Location: ' + area);
+      if(services.length) L.push('\u2022 Looking for: ' + services.join(', '));
+      if(ptype)           L.push('\u2022 Project type: ' + ptype);
+      if(budget)          L.push('\u2022 Budget: ' + budget);
+      if(timeline)        L.push('\u2022 Timeline: ' + timeline);
       if(msg){ L.push(''); L.push('Details: ' + msg); }
       L.push('');
-      L.push('(Sent from your website)');
-
+      L.push('(Sent from tennrenovation.com)');
       const url = 'https://wa.me/' + recipient + '?text=' + encodeURIComponent(L.join('\n'));
-      // analytics: count the lead without sending any personal details
-      if(window.tennTrack){ window.tennTrack('generate_lead', { method:'quote_form', person: recipient === '60163303178' ? 'Lucas' : 'Royce', services: services.join(', ') || 'unspecified', project_type: ptype || 'unspecified' }); }
+
+      // 1) open WhatsApp synchronously so popup blockers allow it
       window.open(url, '_blank', 'noopener');
+
+      // 2) record the lead in the CRM / endpoint (if one is configured) — never blocks the user
+      const attr = (window.tennAttribution && window.tennAttribution()) || {};
+      const lead = {
+        name, phone, area, services: services.join(', '), project_type: ptype, budget, timeline, message: msg,
+        preferred_contact: person, consent: 'yes', consent_text: consentBox.closest('label').textContent.trim(),
+        source: 'tennrenovation.com quote form', page: location.pathname, submitted_at: new Date().toISOString(),
+        first_touch: attr.first || null, last_touch: attr.last || null,
+        summary: L.join('\n')
+      };
+      const sending = window.tennSendLead ? window.tennSendLead(lead) : Promise.resolve(false);
+
+      // 3) analytics: count the lead without personal details
+      if(window.tennTrack){ window.tennTrack('generate_lead', { method:'quote_form', person, services: services.join(', ') || 'unspecified', project_type: ptype || 'unspecified' }); }
+
+      // 4) swap the form for a confirmation
+      const done = document.getElementById('qDone');
+      document.getElementById('qDoneName').textContent = name;
+      document.getElementById('qDoneWa').href = url;
+      form.hidden = true; done.hidden = false;
+      done.scrollIntoView({ behavior:'smooth', block:'start' });
+      sending.then(okSent => { if(okSent) document.getElementById('qDoneLogged').hidden = false; });
     });
   })();
 </script>
