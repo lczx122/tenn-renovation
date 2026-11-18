@@ -640,3 +640,39 @@ ul.feat li::before{ content:""; flex:none; width:8px; height:8px; margin-top:9px
 .social-link svg{ width:20px; height:20px; color:#1877f2; }
 .social-link .arr{ transition:transform .3s var(--ease); }
 .social-link:hover .arr{ transform:translateX(4px); }
+
+/* ---------- six-up service grid, image-less cards, "also" strip ---------- */
+.svc-grid.six{ grid-template-columns:repeat(3,1fr); }
+.svc-grid.six .svc-card{ min-height:380px; }
+.svc-card.noimg{ background:linear-gradient(160deg, var(--ink-2) 0%, var(--ink) 60%, #090c24 100%); }
+.svc-card.noimg::before{ content:""; position:absolute; inset:auto -30% -40% auto; width:70%; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle, rgba(214,166,58,.22), transparent 62%); pointer-events:none; }
+.svc-card .glyph{ position:absolute; top:clamp(22px,2.2vw,30px); left:clamp(22px,2.2vw,30px); width:56px; height:56px; border-radius:16px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); display:grid; place-items:center; color:var(--brass); }
+.svc-card .glyph svg{ width:28px; height:28px; }
+.also{ margin-top:clamp(22px,2.6vw,32px); font-size:14.5px; color:var(--ink-soft); display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center; }
+.also b{ color:var(--ink); }
+.also a{ color:var(--ink); font-weight:600; display:inline-flex; align-items:center; gap:8px; border-bottom:1.5px solid var(--brass); padding-bottom:2px; }
+.also a .arr{ transition:transform .3s var(--ease); }
+.also a:hover .arr{ transform:translateX(4px); }
+@media (max-width:1000px){ .svc-grid.six{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .svc-grid.six{ grid-template-columns:1fr; } }
+
+/* ---------- electrical & aluminium trade cards ---------- */
+.trade-grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(16px,1.8vw,24px); }
+.trade{ background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:clamp(26px,2.8vw,38px); display:flex; flex-direction:column; align-items:flex-start; }
+.trade .ic{ width:56px; height:56px; border-radius:16px; background:var(--ink); color:var(--brass); display:grid; place-items:center; margin-bottom:18px; }
+.trade .ic svg{ width:28px; height:28px; }
+.trade h3{ font-size:clamp(22px,2.2vw,28px); }
+.trade > p{ color:var(--ink-soft); margin-top:12px; max-width:48ch; }
+.trade ul.feat{ margin-top:20px; margin-bottom:26px; }
+.trade .btn{ margin-top:auto; }
+@media (max-width:840px){ .trade-grid{ grid-template-columns:1fr; } }
+
+/* ---------- add-ons grid ---------- */
+.addon-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,1.6vw,20px); }
+.addon{ background:var(--cream); border:1px solid var(--line-2); border-radius:var(--radius-sm); padding:clamp(20px,2vw,26px); }
+.addon .ic{ width:44px; height:44px; border-radius:12px; background:var(--paper); border:1px solid var(--line); color:var(--brass-d); display:grid; place-items:center; }
+.addon .ic svg{ width:22px; height:22px; }
+.addon h3{ font-family:var(--sans); font-weight:800; font-size:16.5px; letter-spacing:0; margin-top:14px; }
+.addon p{ font-size:14px; color:var(--ink-soft); margin-top:6px; }
+@media (max-width:840px){ .addon-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:480px){ .addon-grid{ grid-template-columns:1fr; } }
