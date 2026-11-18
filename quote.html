@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=20261013e">
+<link rel="stylesheet" href="styles.css?v=20261118a">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -88,7 +88,7 @@
         </ol>
         <div class="direct">
           <div class="person"><div><div class="nm">Royce</div><div class="rl">Cabinetry &amp; project lead</div></div><a class="wa-pill" href="https://wa.me/60109718663" target="_blank" rel="noopener">Chat →</a></div>
-          <div class="person"><div><div class="nm">Lucas</div><div class="rl">Smart home &amp; finishing</div></div><a class="wa-pill" href="https://wa.me/60163303178" target="_blank" rel="noopener">Chat →</a></div>
+          <div class="person"><div><div class="nm">Lucas</div><div class="rl">Electrical &amp; finishing</div></div><a class="wa-pill" href="https://wa.me/60163303178" target="_blank" rel="noopener">Chat →</a></div>
         </div>
         <div class="quote-reassure"><span class="dot-ok"></span> Mon–Sat · 9am–6pm · Serving Melaka &amp; surrounds</div>
       </aside>
@@ -120,11 +120,14 @@
           <div class="q-field">
             <span class="q-legend">What do you need? <span class="opt">Pick any</span></span>
             <div class="q-chips" id="qServices">
+              <label class="q-chip"><input type="checkbox" name="service" value="Whole-house renovation"><span>Whole-house renovation</span></label>
               <label class="q-chip"><input type="checkbox" name="service" value="Customized cabinets"><span>Customized cabinets</span></label>
-              <label class="q-chip"><input type="checkbox" name="service" value="Smart home systems"><span>Smart home</span></label>
               <label class="q-chip"><input type="checkbox" name="service" value="Painting work"><span>Painting</span></label>
               <label class="q-chip"><input type="checkbox" name="service" value="Iron grills &amp; gates"><span>Iron grills &amp; gates</span></label>
-              <label class="q-chip"><input type="checkbox" name="service" value="Not sure / whole home"><span>Not sure / whole home</span></label>
+              <label class="q-chip"><input type="checkbox" name="service" value="Electrical work"><span>Electrical</span></label>
+              <label class="q-chip"><input type="checkbox" name="service" value="Aluminium work"><span>Aluminium</span></label>
+              <label class="q-chip"><input type="checkbox" name="service" value="Smart home add-on"><span>Smart home add-on</span></label>
+              <label class="q-chip"><input type="checkbox" name="service" value="Other (tiling, ceiling, aircon, repairs)"><span>Other / not sure</span></label>
             </div>
           </div>
 
@@ -171,7 +174,7 @@
             <span class="q-legend">Send to</span>
             <div class="q-recip" id="qRecip">
               <label class="q-chip"><input type="radio" name="recipient" value="60109718663" checked><span>Royce<small>Cabinetry &amp; project lead</small></span></label>
-              <label class="q-chip"><input type="radio" name="recipient" value="60163303178"><span>Lucas<small>Smart home &amp; finishing</small></span></label>
+              <label class="q-chip"><input type="radio" name="recipient" value="60163303178"><span>Lucas<small>Electrical &amp; finishing</small></span></label>
             </div>
           </div>
 
@@ -199,15 +202,17 @@
     <div class="top">
       <div class="brand">
         <img class="logo-mark" src="media/tenn-logo-light.svg" alt="Tenn Renovation" width="640" height="392">
-        <p class="bl">Customized cabinets, smart home systems, painting and iron grills — designed, made and installed by one Melaka team since 2001.</p>
+        <p class="bl">Whole-house renovation — custom cabinets, painting, iron grills, electrical and aluminium work — designed, made and installed by one Melaka team since 2001.</p>
       </div>
       <div>
         <h4>Services</h4>
         <ul>
+          <li><a href="services.html#whole-house">Whole-house renovation</a></li>
           <li><a href="services.html#cabinetry">Customized cabinets</a></li>
-          <li><a href="services.html#smart-home">Smart home systems</a></li>
           <li><a href="services.html#painting">Painting work</a></li>
           <li><a href="services.html#iron-grills">Iron grills &amp; gates</a></li>
+          <li><a href="services.html#electrical">Electrical &amp; aluminium</a></li>
+          <li><a href="services.html#add-ons">Add-ons &amp; smaller works</a></li>
           <li><a href="services.html#process">Our SOP</a></li>
         </ul>
       </div>
@@ -239,7 +244,7 @@
   </div>
 </footer>
 
-<script src="site.js?v=20261013e"></script>
+<script src="site.js?v=20261118a"></script>
 <script>
   // quote form → compose a tidy WhatsApp message and open the chat
   (function(){

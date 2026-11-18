@@ -6,7 +6,7 @@ Static site, no build step. Open `index.html` in a browser or serve the folder w
 | --- | --- |
 | `index.html` | Home: hero, key figures, services, showcase reel, why Tenn, featured projects, process, testimonials, contact |
 | `company.html` | Company profile: story, values, milestones, capabilities, leadership, growth & investor/partner enquiries |
-| `services.html` | The four crafts in depth, the iron-work build gallery, and the SOP for each craft |
+| `services.html` | Whole-house renovation, then cabinets, painting, iron grills, electrical & aluminium, the add-ons (leaking repair, aircon, tiling, partition, plaster ceiling, smart home), the iron-work build gallery and the SOPs |
 | `projects.html` | Ambience Pulau Gadong (B2C cabinet package), Klebang showroom (B2B show unit), Bukit Baru showroom (B2B lobby), and Kota Syahbandar (B2C fully furnished package, next) |
 | `quote.html` | Contact page with direct WhatsApp links and the quote form (opens a prefilled WhatsApp chat) |
 | `privacy.html` | PDPA privacy notice |
